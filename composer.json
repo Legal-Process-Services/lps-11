@@ -14,8 +14,7 @@
         "laravel/tinker": "^2.9",
         "livewire/livewire": "^3.0",
         "tightenco/ziggy": "^2.0",
-        "ext-json": "*",
-        "aws/aws-sdk-php": "^3.178"
+        "ext-json": "*"
     },
     "require-dev": {
         "fakerphp/faker": "^1.23",
