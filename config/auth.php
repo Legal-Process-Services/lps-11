@@ -61,9 +61,10 @@ return [
 
     'providers' => [
         'users' => [
-            'driver' => 'eloquent',
+            'driver' => 'filemaker',
             'model' => env('AUTH_MODEL', App\Models\User::class),
         ],
+
 
         // 'users' => [
         //     'driver' => 'database',
