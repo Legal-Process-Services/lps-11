@@ -1,5 +1,5 @@
 integrations:
   forge:
-    lps-11:
-      server-id: 846707
-      site-id: 2485729
+    test.filemaker.site:
+      server-id: 847667
+      site-id: 2484918
