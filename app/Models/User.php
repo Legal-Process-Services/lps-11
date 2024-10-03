@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use GearboxSolutions\EloquentFileMaker\Database\Eloquent\FMModel;
+use GearboxSolutions\EloquentFileMaker\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Auth\Authenticatable;
 use Illuminate\Auth\MustVerifyEmail;
 use Illuminate\Auth\Passwords\CanResetPassword;
@@ -41,6 +42,7 @@ class User extends FMModel implements
         'name',
         'email',
         'password',
+        'customer_id',
     ];
 
     /**
@@ -53,6 +55,7 @@ class User extends FMModel implements
         'remember_token',
         'two_factor_recovery_codes',
         'two_factor_secret',
+        'braintree_customer_id',
     ];
 
     /**
@@ -90,5 +93,10 @@ class User extends FMModel implements
         }
 
         return $value;
+    }
+
+    public function customer()
+    {
+        return new BelongsTo(Customer::query(), $this, 'customer_id', 'id', '');
     }
 }
