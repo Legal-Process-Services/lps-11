@@ -59,7 +59,7 @@
                                 >{{ outResponse.Insured }}
                             </div>
                             <div class="text-sm text-gray-900 mt-2 underline">
-                                <inertia-link
+                                <Link
                                     :href="
                                         route('invoice.detail', outResponse.id)
                                     "
@@ -67,10 +67,10 @@
                                     class="px-2 py-1"
                                 >
                                     Worksheet
-                                </inertia-link>
+                                </Link>
                             </div>
                             <div class="text-sm text-gray-900 mt-2 underline">
-                                <inertia-link
+                                <Link
                                     :href="
                                         route('attempt.detail', outResponse.id)
                                     "
@@ -78,15 +78,15 @@
                                     class="px-2 py-1"
                                 >
                                     Attempt History
-                                </inertia-link>
+                                </Link>
                             </div>
                             <div class="text-sm text-gray-900 mt-2 underline">
-                                <inertia-link
+                                <Link
                                     :href="
                                         route('client-response', outResponse.id)
                                     "
                                     class="px-2 py-1"
-                                    >Email LPS about this service</inertia-link
+                                    >Email LPS about this service</Link
                                 >
                             </div>
                         </div>
@@ -290,11 +290,12 @@
 </style>
 
 <script>
-import Pagination from "@/Pages/Components/Pagination";
+// import Pagination from "@/Pages/Components/Pagination";
 import attemptDetail from "@/Pages/Attempt/AttemptDetail.vue";
 import { attempt } from "lodash";
 import RightNav from "@/Pages/Dashboard/RightNav.vue";
 import RightNav2 from "@/Pages/Dashboard/RightNav2.vue";
+import { Link } from '@inertiajs/vue3';
 
 export default {
     name: "RelatedInvoice",
@@ -303,7 +304,7 @@ export default {
             return attemptDetail;
         },
     },
-    components: { RightNav2, RightNav, Pagination },
+    components: { RightNav2, RightNav, Link },
     props: {
         outResponseWO: {
             type: [Object, Array],

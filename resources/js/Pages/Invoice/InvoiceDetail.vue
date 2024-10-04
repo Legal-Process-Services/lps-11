@@ -17,12 +17,12 @@
                 <jet-secondary-button onclick="window.print();return false;"
                     >Print</jet-secondary-button
                 >
-                <inertia-link
+                <Link
                     v-if="!invoice.paid_on"
                     :href="route('invoice.pay', invoice.id)"
                 >
                     <jet-button>View</jet-button>
-                </inertia-link>
+                </Link>
             </div>
 
             <div
@@ -162,10 +162,11 @@
 import JetButton from "@/Jetstream/Button";
 import AppLayout from "@/Layouts/AppLayout";
 import JetSecondaryButton from "@/Jetstream/SecondaryButton";
+import { Link } from '@inertiajs/vue3';
 
 export default {
     name: "InvoiceDetail",
-    components: { JetSecondaryButton, AppLayout, JetButton },
+    components: { JetSecondaryButton, AppLayout, JetButton, Link },
     props: {
         invoice: Object,
         lineItems: Array,

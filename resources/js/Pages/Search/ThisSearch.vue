@@ -152,11 +152,11 @@
                     >
                         <div>
                             <div class="">
-                                <!--                                <inertia-link-->
+                                <!--                                <Link-->
                                 <!--                                    class="text-blue-500 hover:text-blue-600 underline text-sm font-medium"-->
                                 <!--                                    :href="route('invoice.detail', search.id)"-->
                                 <!--                                    >#{{ search.id }}-->
-                                <!--                                </inertia-link>-->
+                                <!--                                </Link>-->
                             </div>
                             <div class="">
                                 <span class="text-xs"> WORK ORDER #: </span
@@ -205,28 +205,28 @@
                                 >{{ search.Insured }}
                             </div>
                             <div class="text-sm text-gray-900 mt-2 underline">
-                                <inertia-link
+                                <Link
                                     :href="route('invoice.detail', search.id)"
                                     @click.stop=""
                                     class="px-2 py-1"
                                 >
                                     Worksheet
-                                </inertia-link>
+                                </Link>
                             </div>
                             <div class="text-sm text-gray-900 mt-2 underline">
-                                <inertia-link
+                                <Link
                                     :href="route('attempt.detail', search.id)"
                                     @click.stop=""
                                     class="px-2 py-1"
                                 >
                                     Attempt History
-                                </inertia-link>
+                                </Link>
                             </div>
                             <div class="text-sm text-gray-900 mt-2 underline">
-                                <inertia-link
+                                <Link
                                     :href="route('client-response', search.id)"
                                     class="px-2 py-1"
-                                    >Email LPS about this service</inertia-link
+                                    >Email LPS about this service</Link
                                 >
                             </div>
                         </div>
@@ -529,7 +529,7 @@
                                                     >
                                                     <br />Client/Insured
                                                     <b>{{ search.Insured }}</b>
-                                                    <br /><inertia-link
+                                                    <br /><Link
                                                         :href="
                                                             route(
                                                                 'invoice.detail',
@@ -539,8 +539,8 @@
                                                         @click.stop=""
                                                         class="px-2 py-1"
                                                     >
-                                                        Worksheet </inertia-link
-                                                    >|<inertia-link
+                                                        Worksheet </Link
+                                                    >|<Link
                                                         :href="
                                                             route(
                                                                 'attempt.detail',
@@ -551,8 +551,8 @@
                                                         class="px-2 py-1"
                                                     >
                                                         Attempt History
-                                                    </inertia-link>
-                                                    <br /><inertia-link
+                                                    </Link>
+                                                    <br /><Link
                                                         :href="
                                                             route(
                                                                 'client-response',
@@ -562,7 +562,7 @@
                                                         @click.stop=""
                                                         class="px-2 py-1"
                                                         >Email LPS about this
-                                                        service</inertia-link
+                                                        service</Link
                                                     >
                                                 </div>
                                             </div>
@@ -643,6 +643,7 @@
 
 <script>
 // import Pagination from "@/Pages/Components/Pagination.vue";
+import { Link } from '@inertiajs/vue3';
 
 export default {
     name: "ThisSearch",
@@ -651,7 +652,7 @@ export default {
         //     return this.searches();
         // },
     },
-    // components: { Pagination },
+     components: { Link },
     props: { searches: Object },
     remember: {
         data: ["currentPage", "invoices", "search", "loading", "links"],

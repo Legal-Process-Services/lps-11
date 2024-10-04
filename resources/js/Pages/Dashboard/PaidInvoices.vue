@@ -66,28 +66,28 @@
                                 >{{ invoice.Insured }}
                             </div>
                             <div class="text-sm text-gray-900 mt-2 underline">
-                                <inertia-link
+                                <Link
                                     :href="route('invoice.detail', invoice.id)"
                                     @click.stop=""
                                     class="px-2 py-1"
                                 >
                                     Worksheet
-                                </inertia-link>
+                                </Link>
                             </div>
                             <div class="text-sm text-gray-900 mt-2 underline">
-                                <inertia-link
+                                <Link
                                     :href="route('attempt.detail', invoice.id)"
                                     @click.stop=""
                                     class="px-2 py-1"
                                 >
                                     Attempt History
-                                </inertia-link>
+                                </Link>
                             </div>
                             <div class="text-sm text-gray-900 mt-2 underline">
-                                <inertia-link
+                                <Link
                                     :href="route('client-response', invoice.id)"
                                     class="px-2 py-1"
-                                    >Email LPS about this service</inertia-link
+                                    >Email LPS about this service</Link
                                 >
                             </div>
                         </div>
@@ -230,7 +230,7 @@
                                                     >
                                                     <br />Client/Insured
                                                     <b>{{ invoice.Insured }}</b>
-                                                    <br /><inertia-link
+                                                    <br /><Link
                                                         :href="
                                                             route(
                                                                 'invoice.detail',
@@ -240,20 +240,17 @@
                                                         @click.stop=""
                                                         class="px-2 py-1"
                                                     >
-                                                        Worksheet </inertia-link
-                                                    >|<inertia-link
-                                                        :href="
+                                                        Worksheet </Link
+                                                    >|
+                                                    <Link  :href="
                                                             route(
                                                                 'attempt.detail',
                                                                 invoice.id,
                                                             )
                                                         "
-                                                        @click.stop=""
-                                                        class="px-2 py-1"
-                                                    >
-                                                        Attempt History
-                                                    </inertia-link>
-                                                    <br /><inertia-link
+                                                           @click.stop=""
+                                                           class="px-2 py-1">Attempt History</Link>
+                                                    <br /><Link
                                                         :href="
                                                             route(
                                                                 'client-response',
@@ -263,7 +260,7 @@
                                                         @click.stop=""
                                                         class="px-2 py-1"
                                                         >Email LPS about this
-                                                        service</inertia-link
+                                                        service</Link
                                                     >
                                                 </div>
                                             </div>
@@ -348,6 +345,7 @@ import attemptDetail from "@/Pages/Attempt/AttemptDetail.vue";
 import { attempt } from "lodash";
 import RightNav from "@/Pages/Dashboard/RightNav.vue";
 import RightNav2 from "@/Pages/Dashboard/RightNav2.vue";
+import { Link } from '@inertiajs/vue3';
 
 export default {
     name: "PaidInvoices",
@@ -356,7 +354,7 @@ export default {
             return attemptDetail;
         },
     },
-    components: { RightNav2, RightNav },
+    components: { RightNav2, RightNav,Link },
     props: {},
     remember: {
         data: ["currentPage", "invoices", "loading", "links"],

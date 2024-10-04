@@ -69,7 +69,6 @@
 
 <script>
 import AppLayout from "@/Layouts/AppLayout.vue";
-import Welcome from "@/Jetstream/Welcome.vue";
 import OutstandingSearch from "@/Pages/Dashboard/OutstandingSearch.vue";
 import AccountBalance from "@/Pages/Dashboard/AccountBalance.vue";
 import RightNav from "@/Pages/Dashboard/RightNav.vue";
@@ -87,7 +86,6 @@ export default {
         RightNav,
         RightNav2,
         AppLayout,
-        Welcome,
         ThisSearch,
     },
     props: {

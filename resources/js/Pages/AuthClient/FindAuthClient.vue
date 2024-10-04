@@ -21,11 +21,11 @@
                     >
                         <div>
                             <div class="">
-                                <inertia-link
+                                <Link
                                     class="text-blue-500 hover:text-blue-600 underline text-sm font-medium"
                                     :href="route('customer.detail', invoice.id)"
                                     >#{{ customer.id }}
-                                </inertia-link>
+                                </Link>
                             </div>
                             <div class="text-xs text-gray-500">
                                 Date: {{ customer.Status }}
@@ -43,13 +43,13 @@
                         </div>
                         <div>
                             <div class="text-right text-sm font-medium mt-5">
-                                <inertia-link
+                                <Link
                                     :href="route('invoice.pay', invoice.id)"
                                     @click.stop=""
                                     class="px-3 py-2 inline-flex leading-5 font-semibold rounded-md bg-green-500 text-white"
                                 >
                                     Pay Now
-                                </inertia-link>
+                                </Link>
                             </div>
                         </div>
                     </div>
@@ -123,7 +123,7 @@
                                                 <div
                                                     class="text-sm font-medium"
                                                 >
-                                                    <inertia-link
+                                                    <Link
                                                         class="text-blue-500 underline"
                                                         :href="
                                                             route(
@@ -133,7 +133,7 @@
                                                         "
                                                         >{{
                                                             firm.id
-                                                        }}</inertia-link
+                                                        }}</Link
                                                     >
                                                 </div>
                                             </div>
@@ -174,8 +174,13 @@
 </template>
 
 <script>
+import { Link } from '@inertiajs/vue3';
+import RightNav2 from "@/Pages/Dashboard/RightNav2.vue";
+import RightNav from "@/Pages/Dashboard/RightNav.vue";
+
 export default {
     name: "OutstandingFirm",
+    components: { RightNav2, RightNav,Link },
     props: {
         firm: Object,
     },

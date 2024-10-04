@@ -30,13 +30,14 @@
 </template>
 
 <script>
-import Card from "@/Pages/Components/Card";
-import AppLayout from "@/Layouts/AppLayout";
-import ButtonLink from "@/Pages/Components/ButtonLink";
+// import Card from "@/Pages/Components/Card.vue";
+import AppLayout from "@/Layouts/AppLayout.vue";
+import ButtonLink from "@/Pages/Components/ButtonLink.vue";
+import { Link } from '@inertiajs/vue3';
 
 export default {
     name: "Success",
-    components: {ButtonLink, AppLayout, Card},
+    components: {ButtonLink, AppLayout, Card, Link},
     props: {
         paymentAmount: Number,
         paymentMethod: String,

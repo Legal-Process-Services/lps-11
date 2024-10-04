@@ -79,7 +79,6 @@
 
 <script>
     import AppLayout from "@/Layouts/AppLayout";
-    import Welcome from "@/Jetstream/Welcome";
     import OutstandingInvoices from "@/Pages/Dashboard/OutstandingInvoices";
     import RightNav from "@/Pages/Dashboard/RightNav";
     import RightNav2 from "@/Pages/Dashboard/RightNav2";
@@ -98,7 +97,6 @@
             RightNav,
             RightNav2,
             AppLayout,
-            Welcome,
         },
         props: {
             outInvoices: Object,

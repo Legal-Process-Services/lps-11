@@ -38,13 +38,13 @@
                         </div>
                         <div>
                             <div class="text-right text-sm font-medium mt-5">
-                                <inertia-link
+                                <Link
                                     :href="route('invoice.pay', invoice.id)"
                                     @click.stop=""
                                     class="px-3 py-2 inline-flex leading-5 font-semibold rounded-md bg-green-500 text-white"
                                 >
                                     Pay Now
-                                </inertia-link>
+                                </Link>
                             </div>
                         </div>
                     </div>
@@ -122,7 +122,7 @@
                                                 <div
                                                     class="text-sm font-medium"
                                                 >
-                                                    <inertia-link
+                                                    <Link
                                                         class="text-blue-500 underline"
                                                         :href="
                                                             route(
@@ -132,7 +132,7 @@
                                                         "
                                                         >{{
                                                             invoice.id
-                                                        }}</inertia-link
+                                                        }}</Link
                                                     >
                                                 </div>
                                             </div>
@@ -173,8 +173,12 @@
 </template>
 
 <script>
+
+import { Link } from '@inertiajs/vue3';
+
 export default {
     name: "OutstandingInvoices",
+    components: {Link},
     props: {
         invoices: Object,
     },

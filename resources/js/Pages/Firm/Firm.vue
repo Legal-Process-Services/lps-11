@@ -68,8 +68,7 @@
 </template>
 
 <script>
-import AppLayout from "@/Layouts/AppLayout";
-import Welcome from "@/Jetstream/Welcome";
+import AppLayout from "@/Layouts/AppLayout.vue";
 import Dashboard from "@/Pages/Dashboard.vue";
 import OutstandingFirm from "@/Pages/Dashboard/OutstandingFirm.vue";
 import OutstandingInvoices from "@/Pages/Dashboard/OutstandingInvoices.vue";

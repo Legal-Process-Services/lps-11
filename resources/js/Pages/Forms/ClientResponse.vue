@@ -81,13 +81,12 @@
 </template>
 
 <script>
-import AppLayout from "@/Layouts/AppLayout";
-import Welcome from "@/Jetstream/Welcome";
-import OutstandingInvoices from "@/Pages/Dashboard/OutstandingInvoices";
-import RightNav from "@/Pages/Dashboard/RightNav";
-import RightNav2 from "@/Pages/Dashboard/RightNav2";
-import PaidInvoices from "@/Pages/Dashboard/PaidInvoices";
-import AccountBalance from "@/Pages/Dashboard/AccountBalance";
+import AppLayout from "@/Layouts/AppLayout.vue";
+import OutstandingInvoices from "@/Pages/Dashboard/OutstandingInvoices.vue";
+import RightNav from "@/Pages/Dashboard/RightNav.vue";
+import RightNav2 from "@/Pages/Dashboard/RightNav2.vue";
+import PaidInvoices from "@/Pages/Dashboard/PaidInvoices.vue";
+import AccountBalance from "@/Pages/Dashboard/AccountBalance.vue";
 import { useRemember } from "@inertiajs/vue3";
 import OutstandingFirm from "@/Pages/Dashboard/OutstandingFirm.vue";
 import RelatedInvoice from "@/Pages/Forms/RelatedInvoice.vue";
@@ -103,7 +102,6 @@ export default {
         RightNav,
         RightNav2,
         AppLayout,
-        Welcome,
     },
     props: {
         outResponseWO: Object,

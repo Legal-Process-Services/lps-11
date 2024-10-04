@@ -23,11 +23,10 @@
 </template>
 
 <script>
-import AppLayout from "@/Layouts/AppLayout";
-import Welcome from "@/Jetstream/Welcome";
-import OutstandingInvoices from "@/Pages/Dashboard/OutstandingInvoices";
-import OutstandingFirm from "@/Pages/Dashboard/OutstandingFirm";
-import PaidInvoices from "@/Pages/Dashboard/PaidInvoices";
+import AppLayout from "@/Layouts/AppLayout.vue";
+import OutstandingInvoices from "@/Pages/Dashboard/OutstandingInvoices.vue";
+import OutstandingFirm from "@/Pages/Dashboard/OutstandingFirm.vue";
+import PaidInvoices from "@/Pages/Dashboard/PaidInvoices.vue";
 import { useRemember } from "@inertiajs/vue3";
 
 export default {

@@ -21,11 +21,11 @@
                     >
                         <div>
                             <div class="">
-                                <inertia-link
+                                <Link
                                     class="text-blue-500 hover:text-blue-600 underline text-sm font-medium"
                                     :href="route('invoice.detail', invoice.id)"
                                     >#{{ invoice.id }}
-                                </inertia-link>
+                                </Link>
                             </div>
                             <div class="text-xs text-gray-500">
                                 Date: {{ invoice.date }}
@@ -45,12 +45,12 @@
                         </div>
                     </div>
 
-                    <pagination
-                        class="mt-6"
-                        :links="links"
-                        :current-page="currentPage"
-                        v-on:clicked="clickPagination"
-                    />
+<!--                    <pagination-->
+<!--                        class="mt-6"-->
+<!--                        :links="links"-->
+<!--                        :current-page="currentPage"-->
+<!--                        v-on:clicked="clickPagination"-->
+<!--                    />-->
                 </div>
 
                 <!-- Table Desktop Table -->
@@ -135,7 +135,7 @@
                                                 <div
                                                     class="text-sm font-medium"
                                                 >
-                                                    <inertia-link
+                                                    <Link
                                                         class="text-blue-500 underline"
                                                         :href="
                                                             route(
@@ -145,7 +145,7 @@
                                                         "
                                                     >
                                                         {{ invoice.id }}
-                                                    </inertia-link>
+                                                    </Link>
                                                 </div>
                                             </div>
                                         </td>
@@ -183,12 +183,12 @@
                                 </tbody>
                             </table>
                         </div>
-                        <pagination
-                            class="mt-6"
-                            :links="links"
-                            :current-page="currentPage"
-                            v-on:clicked="clickPagination"
-                        />
+<!--                        <pagination-->
+<!--                            class="mt-6"-->
+<!--                            :links="links"-->
+<!--                            :current-page="currentPage"-->
+<!--                            v-on:clicked="clickPagination"-->
+<!--                        />-->
                     </div>
                 </div>
             </div>
@@ -234,11 +234,12 @@
 </style>
 
 <script>
-import Pagination from "@/Pages/Components/Pagination";
+// import Pagination from "@/Pages/Components/Pagination";
+import { Link } from '@inertiajs/vue3';
 
 export default {
     name: "PaidInvoices",
-    components: { Pagination },
+     components: { Link },
     props: {},
     remember: {
         data: ["currentPage", "invoices", "loading", "links"],

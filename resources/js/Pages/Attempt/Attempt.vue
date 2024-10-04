@@ -66,13 +66,12 @@
 </template>
 
 <script>
-import AppLayout from "@/Layouts/AppLayout";
-import Welcome from "@/Jetstream/Welcome";
-import OutstandingSearch from "@/Pages/Dashboard/OutstandingSearch";
-import AccountBalance from "@/Pages/Dashboard/AccountBalance";
-import RightNav from "@/Pages/Dashboard/RightNav";
-import RightNav2 from "@/Pages/Dashboard/RightNav2";
-import PaidInvoices from "@/Pages/Dashboard/PaidInvoices";
+import AppLayout from "@/Layouts/AppLayout.vue";
+import OutstandingSearch from "@/Pages/Dashboard/OutstandingSearch.vue";
+import AccountBalance from "@/Pages/Dashboard/AccountBalance.vue";
+import RightNav from "@/Pages/Dashboard/RightNav.vue";
+import RightNav2 from "@/Pages/Dashboard/RightNav2.vue";
+import PaidInvoices from "@/Pages/Dashboard/PaidInvoices.vue";
 import ThisSearch from "@/Pages/Search/ThisSearch.vue";
 import { useRemember } from "@inertiajs/vue3";
 import AttemptDetail from "@/Pages/Attempt/AttemptDetail.vue";
@@ -89,7 +88,7 @@ export default {
         RightNav,
         RightNav2,
         AppLayout,
-        Welcome,
+
         ThisSearch,
     },
     props: {
