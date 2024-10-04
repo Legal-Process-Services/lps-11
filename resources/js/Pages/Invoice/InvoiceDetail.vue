@@ -159,14 +159,13 @@
 </template>
 
 <script>
-import JetButton from "@/Jetstream/Button";
-import AppLayout from "@/Layouts/AppLayout";
-import JetSecondaryButton from "@/Jetstream/SecondaryButton";
+
+import AppLayout from "@/Layouts/AppLayout.vue";
 import { Link } from '@inertiajs/vue3';
 
 export default {
     name: "InvoiceDetail",
-    components: { JetSecondaryButton, AppLayout, JetButton, Link },
+    components: {  AppLayout, Link },
     props: {
         invoice: Object,
         lineItems: Array,
