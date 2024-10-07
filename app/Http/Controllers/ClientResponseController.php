@@ -15,7 +15,7 @@ use Carbon\Carbon;
 
 class ClientResponseController extends Controller
 {
-    public function show()
+    public function show($id)
     {
         /** @var User $user */
         $user = Auth::user();
@@ -35,6 +35,7 @@ class ClientResponseController extends Controller
             'outResponseWO' => $outResponseWO,
             'outFirm' => $outFirm,
             'sixmoago' => $sixmoago,
+            'id' => $id,
         ];
 
 

@@ -63,6 +63,7 @@
                         :outResponseWO="outResponseWO"
                         :customers="outFirm"
                         :sixmoago="sixmoago"
+                        :id="id"
                     />
                 </div>
             </div>
@@ -109,6 +110,7 @@ export default {
         customers: Object,
         sixmoago: String,
         customer: Object,
+        id: Number
     },
     remember: { data: ["tab"], key: "ClientResponse" },
     data() {

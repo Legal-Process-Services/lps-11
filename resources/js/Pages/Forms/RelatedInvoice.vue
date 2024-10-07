@@ -219,12 +219,14 @@
                                                         Your Email Address:
                                                         <br />
                                                         <input
+                                                            v-model="form.email"
                                                             type="text"
                                                             class="border border-gray-300 border-solid rounded mr-2.5 w-96 mb-5"
                                                             name="Email"
                                                             placeholder="Email"
                                                         /><br />Your Message:<br />
                                                         <input
+                                                            v-model="form.message"
                                                             type="text"
                                                             class="border border-gray-300 border-solid rounded mr-2.5 h-96 w-96 mb-1"
                                                             name="Message"
@@ -296,7 +298,7 @@ import { attempt } from "lodash";
 import RightNav from "@/Pages/Dashboard/RightNav.vue";
 import RightNav2 from "@/Pages/Dashboard/RightNav2.vue";
 import { Link } from '@inertiajs/vue3';
-
+import { useForm } from '@inertiajs/vue3';
 export default {
     name: "RelatedInvoice",
     computed: {
@@ -309,6 +311,10 @@ export default {
         outResponseWO: {
             type: [Object, Array],
         },
+        id:{
+            type:Number
+        }
+
     },
     remember: {
         data: ["currentPage", "invoices", "links"],
@@ -325,7 +331,7 @@ export default {
             this.getInvoices(page);
         },
         sendResponse(){
-            this.form.post(route("invoice.pay.submit", this.invoiceId));
+            this.form.post(route("invoice.client-response", this.id))
         }
     },
     async created() {
@@ -336,6 +342,10 @@ export default {
             invoices: Array,
             links: Array,
             currentPage: 1,
+            form: useForm({
+                email: null,
+                message: null,
+            }),
         };
     },
 };

@@ -47,6 +47,7 @@ Route::middleware(['auth:sanctum', 'verified', 'client.linked'])->group(function
     Route::get('/account-balance', [FirmController::class, 'show'])->name('account-balance');
     Route::get('/dashboard/paid-invoices', [DashboardController::class, 'getPaidInvoices'])->name('dashboard-paid-invoices');
     Route::get('/invoice/{id}/pay', [InvoiceController::class, 'pay'])->name('invoice.pay');
+    Route::post('/invoice/{id}/client-response', [InvoiceController::class, 'clientResponse'])->name('invoice.client-response');
     Route::get('/authclient', [AuthClientController::class, 'show'])->name('auth-client');
     Route::post('/invoice/{id}/pay', [InvoiceController::class, 'submitPayment'])->name('invoice.pay.submit');
     Route::post('/invoice/{id}/stripe/getClientSecret', [InvoiceController::class, 'getStripeClientSecret'])->name('invoice.pay.stripe.get-client-secret');

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\ClientResponse;
 use App\Mail\PaymentAlert;
 use App\Mail\Receipt;
 use App\Models\Customer;
@@ -18,6 +19,19 @@ use UnexpectedValueException;
 
 class InvoiceController extends Controller
 {
+
+    public function clientResponse(Request $request, $id){
+
+
+        $request->validate([
+           'email' => 'required|email',
+           'message' => 'required',
+        ]);
+        Mail::to('jeaniezatkulak@gmail.com')->send(new ClientResponse($id,$request->email,$request->message));
+
+      return redirect()->back()->with('success', 'Mail Sent Successfully');
+    }
+
     public function get(string $id)
     {
 
