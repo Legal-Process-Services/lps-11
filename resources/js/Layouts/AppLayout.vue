@@ -281,7 +281,7 @@ const logout = () => {
             </header>
 
             <!-- Page Content -->
-            <main class="sm:container flex flex-row max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 testclass">
+            <main class="sm:container flex flex-row max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <slot></slot>
             </main>
         </div>
