@@ -17,28 +17,28 @@
                         <a
                             href="/dashboard"
                             class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
-                            >Process List</a
+                        >Process List</a
                         >
                     </li>
                     <li>
                         <a
                             href="/search"
                             class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
-                            >Search</a
+                        >Search</a
                         >
                     </li>
                     <li>
                         <a
                             href="/account-balance"
                             class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
-                            >Account Balance</a
+                        >Account Balance</a
                         >
                     </li>
                     <li>
                         <a
                             href="mailto:%63on%74ac%74@lp%73nv%2E%63om"
                             class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
-                            >Email Us</a
+                        >Email Us</a
                         >
                     </li>
                 </ul>
@@ -112,7 +112,7 @@ export default {
         customer: Object,
         id: Number
     },
-    remember: { data: ["tab"], key: "ClientResponse" },
+    remember: {data: ["tab"], key: "ClientResponse"},
     data() {
         return {
             tab: 1,

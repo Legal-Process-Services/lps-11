@@ -46,7 +46,7 @@
             </div>
         </template>
 
-        <div class="basis-3/4">
+        <div class="basis-3/4 columns-sm">
             <div class="py-2">
                 <div class="max-w-7xl mx-auto sm:px-6 lg:px-4">
                     <div class="my-5"></div>
@@ -65,7 +65,7 @@
             </div>
         </div>
 
-        <div class="basis-1/4">
+        <div class="basis-1/4 columns-xs">
             <div class="py-2">
                 <div class="max-w-7xl mx-auto sm:px-6 lg:px-4">
                     <div class="my-5"></div>

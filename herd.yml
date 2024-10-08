@@ -1,5 +1,8 @@
 integrations:
   forge:
+    default:
+      server-id: 847667
+      site-id: 2484892
     test.filemaker.site:
       server-id: 847667
       site-id: 2484918

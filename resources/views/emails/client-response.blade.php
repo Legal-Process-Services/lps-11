@@ -1,12 +1,10 @@
 
 
-<h1>Work Number Id : {{$wordId}}</h1>
+<h2>Work Number Id : {{$wordId}}</h2>
 
 
-<h1>User Email : {{$userEmail}}</h1>
+<h2>User Email : {{$userEmail}}</h2>
 
-<b>Message:</b>
-
-<p>
+<p>Message:<br>
     {!!$userMessage!!}
 </p>

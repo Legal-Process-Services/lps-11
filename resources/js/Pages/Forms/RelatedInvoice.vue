@@ -1,3 +1,4 @@
+
 <template>
     <div class="flex flex-col">
         <div class="-my-2 sm:-mx-6 lg:-mx-8">
@@ -86,7 +87,7 @@
                                         route('client-response', outResponse.id)
                                     "
                                     class="px-2 py-1"
-                                    >Email LPS about this service</Link
+                                >Email LPS about this service</Link
                                 >
                             </div>
                         </div>
@@ -108,89 +109,89 @@
                                 class="w-full divide-y divide-gray-200 table-auto"
                             >
                                 <thead class="bg-gray-50">
-                                    <tr>
-                                        <th
-                                            scope="col"
-                                            class="pl-3 md:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider width: 200px;"
-                                        >
-                                            Work Order
-                                        </th>
-                                        <th
-                                            scope="col"
-                                            class="px-3 md:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
-                                        >
-                                            &nbsp;
-                                        </th>
-                                        <th
-                                            scope="col"
-                                            class="px-3 md:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
-                                        >
-                                            &nbsp;
-                                        </th>
-                                        <th
-                                            scope="col"
-                                            class="px-3 md:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
-                                        >
-                                            &nbsp;
-                                        </th>
-                                        <th
-                                            scope="col"
-                                            class="px-3 md:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
-                                        >
-                                            &nbsp;
-                                        </th>
-                                        <th
-                                            scope="col"
-                                            class="px-3 md:px-6 py-3 text-xs font-medium text-gray-500 uppercase tracking-wider"
-                                        >
-                                            Status
-                                        </th>
-                                        <th
-                                            scope="col"
-                                            class="px-3 md:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
-                                        >
-                                            Serve To
-                                        </th>
-                                        <th
-                                            scope="col"
-                                            class="px-3 md:px-6 py-3 text-xs font-medium text-gray-500 uppercase tracking-wider"
-                                        >
-                                            &nbsp;
-                                        </th>
-                                    </tr>
+                                <tr>
+                                    <th
+                                        scope="col"
+                                        class="pl-3 md:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider width: 200px;"
+                                    >
+                                        Work Order
+                                    </th>
+                                    <th
+                                        scope="col"
+                                        class="px-3 md:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+                                    >
+                                        &nbsp;
+                                    </th>
+                                    <th
+                                        scope="col"
+                                        class="px-3 md:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+                                    >
+                                        &nbsp;
+                                    </th>
+                                    <th
+                                        scope="col"
+                                        class="px-3 md:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+                                    >
+                                        &nbsp;
+                                    </th>
+                                    <th
+                                        scope="col"
+                                        class="px-3 md:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+                                    >
+                                        &nbsp;
+                                    </th>
+                                    <th
+                                        scope="col"
+                                        class="px-3 md:px-6 py-3 text-xs font-medium text-gray-500 uppercase tracking-wider"
+                                    >
+                                        Status
+                                    </th>
+                                    <th
+                                        scope="col"
+                                        class="px-3 md:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+                                    >
+                                        Serve To
+                                    </th>
+                                    <th
+                                        scope="col"
+                                        class="px-3 md:px-6 py-3 text-xs font-medium text-gray-500 uppercase tracking-wider"
+                                    >
+                                        &nbsp;
+                                    </th>
+                                </tr>
                                 </thead>
                                 <tbody
                                     class="bg-white divide-y divide-gray-200"
                                 >
-                                    <tr v-for="invoice in outResponseWO">
-                                        <td
-                                            class="pl-3 md:px-6 py-4 flex-wrap"
-                                            colspan="5"
-                                        >
-                                            <div class="flex items-center">
-                                                <div
-                                                    class="text-md font-medium"
-                                                >
-                                                    <b>{{ invoice.id }}</b>
-                                                </div>
+                                <tr v-for="invoice in outResponseWO">
+                                    <td
+                                        class="pl-3 md:px-6 py-4 flex-wrap"
+                                        colspan="5"
+                                    >
+                                        <div class="flex items-center">
+                                            <div
+                                                class="text-md font-medium"
+                                            >
+                                                <b>{{ invoice.id }}</b>
                                             </div>
-                                        </td>
-                                        <td
-                                            class="px-3 md:px-6 py-4 whitespace-nowrap text-sm text-gray-900 align-text-top"
-                                        >
-                                            <div class="">
-                                                {{ invoice.total }}
-                                            </div>
-                                        </td>
-                                        <td
-                                            class="px-3 md:px-6 py-4 whitespace-nowrap text-sm text-gray-900 align-text-top"
-                                        >
-                                            {{ invoice.Serve_To }}
-                                        </td>
-                                        <td
-                                            class="px-3 md:px-6 py-4 whitespace-normal align-text-top"
-                                        ></td>
-                                    </tr>
+                                        </div>
+                                    </td>
+                                    <td
+                                        class="px-3 md:px-6 py-4 whitespace-nowrap text-sm text-gray-900 align-text-top"
+                                    >
+                                        <div class="">
+                                            {{ invoice.total }}
+                                        </div>
+                                    </td>
+                                    <td
+                                        class="px-3 md:px-6 py-4 whitespace-nowrap text-sm text-gray-900 align-text-top"
+                                    >
+                                        {{ invoice.Serve_To }}
+                                    </td>
+                                    <td
+                                        class="px-3 md:px-6 py-4 whitespace-normal align-text-top"
+                                    ></td>
+                                </tr>
                                 </tbody>
                             </table>
                         </div>
@@ -204,46 +205,46 @@
                                 <tbody
                                     class="bg-white divide-y divide-gray-200"
                                 >
-                                    <tr>
-                                        <td
-                                            class="pl-3 md:px-6 py-4 flex-wrap"
-                                            colspan="1"
-                                        >
-                                            <div class="flex items-center">
-                                                <div
-                                                    class="text-md font-medium mt-10 ml-10"
+                                <tr>
+                                    <td
+                                        class="pl-3 md:px-6 py-4 flex-wrap"
+                                        colspan="1"
+                                    >
+                                        <div class="flex items-center">
+                                            <div
+                                                class="text-md font-medium mt-10 ml-10"
+                                            >
+                                                <form
+
                                                 >
-                                                    <form
+                                                    Your Email Address:
+                                                    <br />
+                                                    <input
+                                                        v-model="form.email"
+                                                        type="text"
+                                                        class="border border-gray-300 border-solid rounded mr-2.5 w-96 mb-5"
+                                                        name="Email"
+                                                        placeholder="Email"
+                                                    /><br />Your Message:<br />
+                                                    <input
+                                                        v-model="form.message"
+                                                        type="text"
+                                                        class="border border-gray-300 border-solid rounded mr-2.5 h-96 w-96 mb-1"
+                                                        name="Message"
+                                                    /><br />
 
+                                                    <button
+                                                        @click.prevent="sendResponse"
+                                                        type="submit"
+                                                        className="btn bg-blue-500 border border-blue-700 border-solid rounded text-white mt-10"
                                                     >
-                                                        Your Email Address:
-                                                        <br />
-                                                        <input
-                                                            v-model="form.email"
-                                                            type="text"
-                                                            class="border border-gray-300 border-solid rounded mr-2.5 w-96 mb-5"
-                                                            name="Email"
-                                                            placeholder="Email"
-                                                        /><br />Your Message:<br />
-                                                        <input
-                                                            v-model="form.message"
-                                                            type="text"
-                                                            class="border border-gray-300 border-solid rounded mr-2.5 h-96 w-96 mb-1"
-                                                            name="Message"
-                                                        /><br />
-
-                                                        <button
-                                                            @click.prevent="sendResponse"
-                                                            type="submit"
-                                                            className="btn bg-blue-500 border border-blue-700 border-solid rounded text-white mt-10"
-                                                        >
-                                                            &nbsp;&nbsp;Submit&nbsp;&nbsp;
-                                                        </button>
-                                                    </form>
-                                                </div>
+                                                        &nbsp;&nbsp;Submit&nbsp;&nbsp;
+                                                    </button>
+                                                </form>
                                             </div>
-                                        </td>
-                                    </tr>
+                                        </div>
+                                    </td>
+                                </tr>
                                 </tbody>
                             </table>
                         </div>
