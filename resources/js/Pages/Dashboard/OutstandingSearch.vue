@@ -184,10 +184,11 @@
 import { Link } from '@inertiajs/vue3';
 import RightNav2 from "@/Pages/Dashboard/RightNav2.vue";
 import RightNav from "@/Pages/Dashboard/RightNav.vue";
+import AccountBalance from "@/Pages/Dashboard/AccountBalance.vue";
 
 export default {
     name: "OutstandingInvoices",
-    components: { RightNav2, RightNav,Link },
+    components: { RightNav2, RightNav,Link, AccountBalance },
     props: {
         invoices: Object,
     },

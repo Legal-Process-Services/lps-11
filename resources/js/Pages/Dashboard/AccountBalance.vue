@@ -1,4 +1,7 @@
 <template>
+    <app-layout>
+
+        <template #header>
     <div class="flex flex-col">
         <div class="-my-2 sm:-mx-6 lg:-mx-8">
             <div class="py-2 align-middle inline-block w-full sm:px-6 lg:px-8">
@@ -304,6 +307,8 @@
             </div>
         </div>
     </div>
+        </template>
+    </app-layout>
 </template>
 <style scoped>
 .lds-ring {
@@ -348,9 +353,11 @@
 import attemptDetail from "@/Pages/Attempt/AttemptDetail.vue";
 import { attempt } from "lodash";
 import { Link } from '@inertiajs/vue3'
+import AppLayout from "@/Layouts/AppLayout.vue";
 
 export default {
     name: "AccountBalance",
+    components: {AppLayout},
     computed: {
         attemptDetail() {
             return attemptDetail;

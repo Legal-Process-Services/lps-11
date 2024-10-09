@@ -49,8 +49,23 @@ const logout = () => {
                             <!-- Navigation Links -->
                             <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
                                 <NavLink :href="route('dashboard')" :active="route().current('dashboard')">
-                                    Dashboard
+                                    Process List
                                 </NavLink>
+                            </div>
+                            <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                                <NavLink :href="route('search')" :active="route().current('search')">
+                                    Search
+                                </NavLink>
+                            </div>
+                            <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                                <NavLink :href="route('account-balance')" :active="route().current('account-balance')">
+                                    Account Balance
+                                </NavLink>
+                            </div>
+                            <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                                <a href="mailto:%63on%74ac%74@lp%73nv%2E%63om" class="inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-sm font-medium leading-5 text-gray-500 hover:text-gray-700 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300 transition duration-150 ease-in-out">
+                                    Email Us
+                                </a>
                             </div>
                         </div>
 
@@ -192,8 +207,23 @@ const logout = () => {
                 <div :class="{'block': showingNavigationDropdown, 'hidden': ! showingNavigationDropdown}" class="sm:hidden">
                     <div class="pt-2 pb-3 space-y-1">
                         <ResponsiveNavLink :href="route('dashboard')" :active="route().current('dashboard')">
-                            Dashboard
+                            Process List
                         </ResponsiveNavLink>
+                    </div>
+                    <div class="pt-2 pb-3 space-y-1">
+                        <ResponsiveNavLink :href="route('search')" :active="route().current('search')">
+                            Search
+                        </ResponsiveNavLink>
+                    </div>
+                    <div class="pt-2 pb-3 space-y-1">
+                            <ResponsiveNavLink :href="route('account-balance')" :active="route().current('account-balance')">
+                                Account Balance
+                            </ResponsiveNavLink>
+                    </div>
+                    <div class="pt-2 pb-3 space-y-1 ml-4">
+                                <a href="mailto:%63on%74ac%74@lp%73nv%2E%63om">
+                                    Email Us
+                                </a>
                     </div>
 
                     <!-- Responsive Settings Options -->

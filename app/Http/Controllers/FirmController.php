@@ -47,5 +47,48 @@ class FirmController extends Controller
 
         return $firms;
     }
+
+    public function getAccountBalance(Request $request)
+    {
+        /** @var User $user */
+        $user = Auth::user();
+
+        $customer = $user->customer;
+
+        $outFirm = $customer->outstandingFirm()->get();
+
+
+        $client = "test";
+        $data = [
+            'client' => $client,
+            'outFirm' => $outFirm,
+//            'customers' => $$customer,
+        ];
+
+
+        return Inertia::render('Dashboard/AccountBalance', $data);
+    }
+
+
+public function getAcctBal(Request $request)
+{
+    /** @var User $user */
+    $user = Auth::user();
+
+    $customer = $user->customer;
+
+    $outFirm = $customer->outstandingFirm()->get();
+
+
+    $client = "test";
+    $data = [
+        'client' => $client,
+        'outFirm' => $outFirm,
+//            'customers' => $$customer,
+    ];
+
+
+    return Inertia::render('Dashboard/AccountBalance', $data);
 }
 
+}
