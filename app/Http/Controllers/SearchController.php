@@ -79,4 +79,50 @@ class SearchController extends Controller
         //$results = Search::where('WorkOrderNo', 'like', "%$search%")->get();
 
     }
+
+    public function showReport(Request $request)
+    {
+        /** @var User $user */
+        $user = Auth::user();
+
+        $customer = $user->customer;
+
+
+        $invoices = Invoice::query();
+        $search = $request->search;
+        $date1 = $request->invdate1;
+        $date2 = $request->invdate2;
+        $date1a = Carbon::parse($date1)->format('m/d/Y');
+        $date2a = Carbon::parse($date2)->format('m/d/Y');
+        if($search){
+            $invoices->when($search, function ($query,$search) use ($customer){
+                $query->where('WorkOrderNo',    $search)
+                    ->where('Attorney_ID', $customer->AttnyID)
+                    ->orWhere('InvoiceFaxRemarks',  $search)
+                    ->orWhere('Serve_To(1)',  $search)
+                    ->orWhere('Status', $search)
+                    ->orWhere('Docket_ID',  $search)
+                    ->orWhere('Case_No',  $search);
+
+            });
+        }
+        else if ($date1){
+            $invoices->when($date1a, function ($query, $date1a) use ($customer, $date2a){
+                $query->whereBetween('InvoiceDate',    [$date1a, $date2a])
+                    ->orderByDesc('WorkOrderNo')->paginate(5);
+            });
+
+        }
+
+
+
+        $data = [
+            'outSearch' => $invoices->where('Attorney_ID', $customer->AttnyID)
+                ->orderByDesc('WorkOrderNo')->paginate(10),
+        ];
+
+
+        return Inertia::render('Search/Reports', $data);
+    }
 }
+

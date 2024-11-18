@@ -184,7 +184,7 @@
 import { Link } from '@inertiajs/vue3';
 import RightNav2 from "@/Pages/Dashboard/RightNav2.vue";
 import RightNav from "@/Pages/Dashboard/RightNav.vue";
-import AccountBalance from "@/Pages/Dashboard/AccountBalance.vue";
+import AccountBalance from "@/Pages/Firm/AccountBalance.vue";
 
 export default {
     name: "OutstandingInvoices",

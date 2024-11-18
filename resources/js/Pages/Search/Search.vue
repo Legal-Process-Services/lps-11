@@ -33,7 +33,7 @@
 <script>
 import AppLayout from "@/Layouts/AppLayout.vue";
 import OutstandingSearch from "@/Pages/Dashboard/OutstandingSearch.vue";
-import AccountBalance from "@/Pages/Dashboard/AccountBalance.vue";
+import AccountBalance from "@/Pages/Firm/AccountBalance.vue";
 import RightNav from "@/Pages/Dashboard/RightNav.vue";
 import RightNav2 from "@/Pages/Dashboard/RightNav2.vue";
 import PaidInvoices from "@/Pages/Dashboard/PaidInvoices.vue";

@@ -42,8 +42,9 @@ Route::middleware(['auth:sanctum', 'verified', 'client.linked'])->group(function
     Route::get('/attempt/{id}', [AttemptController::class, 'show'])->name('attempt.detail');
     Route::get('/attempt', [AttemptController::class, 'show'])->name('attempt');
     Route::get('/search', [SearchController::class, 'show'])->name('search');
+    Route::get('/reports', [SearchController::class, 'showReport'])->name('reports');
     Route::get('/client-response/{id}', [ClientResponseController::class, 'show'])->name('client-response');
-    Route::get('/firm', [FirmController::class, 'getAcctBal'])->name('firm');
+    Route::get('/firm', [FirmController::class, 'getAccountBalance'])->name('firm');
     Route::get('/account-balance', [FirmController::class, 'getAccountBalance'])->name('account-balance');
     Route::get('/dashboard/paid-invoices', [DashboardController::class, 'getPaidInvoices'])->name('dashboard-paid-invoices');
     Route::get('/invoice/{id}/pay', [InvoiceController::class, 'pay'])->name('invoice.pay');

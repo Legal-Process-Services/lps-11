@@ -4,15 +4,16 @@
             <h2
                 class="font-semibold text-xl text-gray-800 leading-tight float-left"
             >
-               Your Firm jcz
+                Reports
             </h2>
-        </template>
 
+        </template>
         <div class="basis-3/4">
             <div class="py-2">
                 <div class="max-w-7xl mx-auto sm:px-6 lg:px-4">
                     <div class="my-5"></div>
-                    <AccountBalance :invoices="outInvoices" />
+
+                    <ThisReport :searches="outSearch" />
                 </div>
             </div>
         </div>
@@ -31,36 +32,35 @@
 
 <script>
 import AppLayout from "@/Layouts/AppLayout.vue";
-import Dashboard from "@/Pages/Dashboard.vue";
-import OutstandingFirm from "@/Pages/Dashboard/OutstandingFirm.vue";
-import OutstandingInvoices from "@/Pages/Dashboard/OutstandingInvoices.vue";
-import { useRemember } from "@inertiajs/vue3";
-import RightNav2 from "@/Pages/Dashboard/RightNav2.vue";
-import RightNav from "@/Pages/Dashboard/RightNav.vue";
-import PaidInvoices from "@/Pages/Dashboard/PaidInvoices.vue";
+import OutstandingSearch from "@/Pages/Dashboard/OutstandingSearch.vue";
 import AccountBalance from "@/Pages/Firm/AccountBalance.vue";
+import RightNav from "@/Pages/Dashboard/RightNav.vue";
+import RightNav2 from "@/Pages/Dashboard/RightNav2.vue";
+import PaidInvoices from "@/Pages/Dashboard/PaidInvoices.vue";
 import ThisSearch from "@/Pages/Search/ThisSearch.vue";
+import ThisReport from "@/Pages/Search/ThisReport.vue";
+import {useRemember} from "@inertiajs/vue3";
 
 export default {
-    name: "Firm",
+    name: "Reports",
     components: {
-        ThisSearch,
-        AccountBalance,
         PaidInvoices,
-        OutstandingInvoices,
-        Dashboard,
+        AccountBalance,
+        OutstandingSearch,
         RightNav,
         RightNav2,
-        OutstandingFirm,
         AppLayout,
-        Welcome,
+        ThisSearch,
+        ThisReport,
     },
     props: {
+        outSearch: Object,
+        search: Object,
         outFirm: Object,
-        outInvoices: Object,
         customers: Object,
+        sixmoago: String,
     },
-    remember: { data: ["tab"], key: "Firm" },
+    remember: { data: ["tab"], key: "Search" },
     data() {
         return {
             tab: 1,

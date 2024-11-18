@@ -83,7 +83,7 @@
     import RightNav from "@/Pages/Dashboard/RightNav";
     import RightNav2 from "@/Pages/Dashboard/RightNav2";
     import PaidInvoices from "@/Pages/Dashboard/PaidInvoices";
-    import AccountBalance from "@/Pages/Dashboard/AccountBalance";
+    import AccountBalance from "@/Pages/Firm/AccountBalance.vue";
     import {useRemember} from "@inertiajs/vue3";
     import OutstandingFirm from "@/Pages/Dashboard/OutstandingFirm.vue";
 

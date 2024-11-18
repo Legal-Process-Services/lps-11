@@ -96,7 +96,7 @@
                                                 <div
                                                     class="text-med font-large"
                                                 >
-                                                    <a href="report">Report</a>
+                                                    <a href="reports">Report</a>
                                                 </div>
                                             </div>
                                         </td>
