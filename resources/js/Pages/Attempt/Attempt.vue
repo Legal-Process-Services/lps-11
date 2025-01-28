@@ -6,8 +6,10 @@
             >
                 Attempt History Detail
             </h2>
-
-        </template>
+            <div>
+                &nbsp;
+            </div>
+            </template>
         <div class="basis-3/4">
             <div class="py-2">
                 <div class="max-w-7xl mx-auto sm:px-6 lg:px-4">

@@ -6,7 +6,9 @@
             >
                 Search
             </h2>
-
+            <div>
+                &nbsp;
+            </div>
         </template>
         <div class="basis-3/4">
             <div class="py-2">

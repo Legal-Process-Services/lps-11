@@ -85,19 +85,22 @@
                                 <tbody
                                     class="bg-white divide-y divide-gray-400"
                                 >
-                                    <div
+                                    <tr
                                         v-if="attempts.length === 0"
-                                        class="bg-white h-16 flex items-center justify-center text-gray-500 pl-3.5 pr-10"
+                                        class="h-16 flex items-center justify-center text-gray-500 pl-3.5 pr-10 w-fit"
                                     >
+                                        <td style="display:block; box-sizing:border-box; clear:both " class="bg-white" colspan="7">
                                         You have no Attempt History for this
                                         Work Order
-                                    </div>
+                                        </td>
+
+                                    </tr>
                                     <tr
                                         v-for="attempt in attempts"
                                         class="cursor-pointer"
                                     >
                                         <td
-                                            class="pl-4 md:px-6 py-4 whitespace-nowrap"
+                                            class="pl-4 md:px-6 py-4 bg-white whitespace-nowrap"
                                             colspan="1"
                                         >
                                             <div class="flex items-center">

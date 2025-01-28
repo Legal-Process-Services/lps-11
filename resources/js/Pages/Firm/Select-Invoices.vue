@@ -24,7 +24,7 @@
                                 <Link
                                     class="text-blue-500 hover:text-blue-600 underline text-sm font-medium"
                                     :href="route('invoice.detail', invoice.id)"
-                                >#{{ invoice.id }}
+                                    >#{{ invoice.id }}
                                 </Link>
                             </div>
                             <div class="text-xs text-gray-500">
@@ -45,40 +45,29 @@
                         </div>
                     </div>
 
-                    <!--                    <pagination-->
-                    <!--                        class="mt-6"-->
-                    <!--                        :links="(links, attemptDetail)"-->
-                    <!--                        :current-page="currentPage"-->
-                    <!--                        v-on:clicked="clickPagination"-->
-                    <!--                    />-->
+<!--                    <pagination-->
+<!--                        class="mt-6"-->
+<!--                        :links="(links, attemptDetail)"-->
+<!--                        :current-page="currentPage"-->
+<!--                        v-on:clicked="clickPagination"-->
+<!--                    />-->
                 </div>
 
                 <!-- Table Desktop Table -->
-                <table
-                    class="w-full divide-y divide-gray-200 table-auto"
-                >
-                    <thead class="bg-gray-50">
-                    </thead>
-                </table>
-                <div class="sm:block -my-2 sm:-mx-6 lg:-mx-8 sm:gap-4 sm:px-0 ">
+                <div class="sm:block -my-2 sm:-mx-6 lg:-mx-8 sm:gap-4 sm:px-0">
                     <div
                         class="py-2 align-middle inline-block w-full sm:px-6 lg:px-8 pl-3.5"
                     >
                         <div
                             class="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg pt-4 p-4 pb-10 mb-2.5 bg-white"
                         >
+<!--                            <table-->
+<!--                            class="w-full divide-y divide-gray-200 table-auto"-->
+<!--                        >-->
+
+<!--                            <thead>-->
                             <div
                                 class="flex items-center hover:text-indigo-500 hover:font-weight-bolder hover:cursor-pointer pt-2"
-                            >
-                                <a href="account-balance">
-                                    <button
-                                        class="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded"
-                                    >
-                                        Back
-                                    </button></a>
-                            </div>
-                            <div
-                                class="flex items-center hover:text-indigo-500 hover:font-weight-bolder hover:cursor-pointer pt-5"
                             >
                                 <a
                                     href="https://www.lpsnv.com/webstatements/ajjr.pdf"
@@ -98,39 +87,26 @@
                                     Total Current Balance for AJJR:</a
                                 >&nbsp; $113.12
                             </div>
-
-                                <div
-                                    class="flex items-center hover:text-indigo-500 hover:font-weight-bolder hover:cursor-pointer pt-5"
-                                >
-                                    Pay Account Balance $113.12 By:&nbsp;&nbsp;
-                                <a href="pymt-stub-check">
-                                    <button
-                                        class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded"
-                                    >
-                                        Check
-                                    </button></a>
-                                &nbsp;
-                                <a href="https://www.lpsnv.com/members/credit_card_auth.asp">
-                                    <button
-                                        class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-                                    >
-                                        Credit Card
-                                    </button></a>
-                                &nbsp;
+                            <div
+                                class="flex items-center hover:text-indigo-500 hover:font-weight-bolder hover:cursor-pointer pt-2"
+                            >
                                 <a href="account-balance">
-                                    <button
-                                        class="bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded"
-                                    >
-                                        PayPal
-                                    </button></a>
-                                &nbsp;
-<!--                                <a href="pay-select-invoices">-->
+                                    &nbsp;<button
+                                    class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+                                >
+                                    Back
+                                </button></a>&nbsp;
+<!--                                <a href="pay-account-balance">-->
 <!--                                <button-->
 <!--                                    class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"-->
+<!--                                    onclick=""-->
 <!--                                >-->
-<!--                                    Pay Select Invoice(s)-->
+<!--                                    Pay Account Balance-->
 <!--                                </button></a>-->
+
                             </div>
+<!--                            </thead>-->
+<!--                        </table>-->
                         </div>
                     </div>
                 </div>
@@ -184,7 +160,7 @@ import { attempt } from "lodash";
 import { Link } from '@inertiajs/vue3'
 
 export default {
-    name: "AccountBalance",
+    name: "statement",
     computed: {
         attemptDetail() {
             return attemptDetail;

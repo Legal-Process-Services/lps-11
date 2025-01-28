@@ -39,6 +39,7 @@ class Invoice extends FMModel
         'WebSendBy' => 'WebSendBy',
         'Docket_ID' => 'Docket_ID',
         'InvoiceDate' => 'InvoiceDate',
+        'DateofHearing' => 'DateofHearing',
     ];
 
     public function lineItems(){

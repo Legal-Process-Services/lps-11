@@ -6,6 +6,7 @@ use App\Scopes\BelongsToUserClientScope;
 use GearboxSolutions\EloquentFileMaker\Database\Eloquent\FMModel;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\Auth;
 
 class Customer extends FMModel
 {
@@ -55,8 +56,6 @@ class Customer extends FMModel
         return $this->hasMany(Search::class)->where('CUSTOMER ID MATCH FIELD', "=" . $this->id);
 
     }
-
-
 
 
  }

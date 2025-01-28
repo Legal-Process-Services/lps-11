@@ -163,7 +163,7 @@
                                 <tbody
                                     class="bg-white divide-y divide-gray-200"
                                 >
-                                <tr v-for="invoice in outResponseWO">
+                                <tr v-for="outResponse in outResponseWO">
                                     <td
                                         class="pl-3 md:px-6 py-4 flex-wrap"
                                         colspan="5"
@@ -172,7 +172,7 @@
                                             <div
                                                 class="text-md font-medium"
                                             >
-                                                <b>{{ invoice.id }}</b>
+                                                <b>{{ outResponse.id }} jcz</b>
                                             </div>
                                         </div>
                                     </td>
@@ -180,13 +180,13 @@
                                         class="px-3 md:px-6 py-4 whitespace-nowrap text-sm text-gray-900 align-text-top"
                                     >
                                         <div class="">
-                                            {{ invoice.total }}
+                                            {{ outResponse.total }} 123
                                         </div>
                                     </td>
                                     <td
                                         class="px-3 md:px-6 py-4 whitespace-nowrap text-sm text-gray-900 align-text-top"
                                     >
-                                        {{ invoice.Serve_To }}
+                                        {{ outResponse.Serve_To }}234
                                     </td>
                                     <td
                                         class="px-3 md:px-6 py-4 whitespace-normal align-text-top"
@@ -215,7 +215,6 @@
                                                 class="text-md font-medium mt-10 ml-10"
                                             >
                                                 <form
-
                                                 >
                                                     Your Email Address:
                                                     <br />
@@ -226,12 +225,14 @@
                                                         name="Email"
                                                         placeholder="Email"
                                                     /><br />Your Message:<br />
-                                                    <input
+                                                    <textarea
                                                         v-model="form.message"
-                                                        type="text"
-                                                        class="border border-gray-300 border-solid rounded mr-2.5 h-96 w-96 mb-1"
+                                                        style="width:380px;height:250px;"
+                                                        class="border border-gray-300 border-solid rounded mr-2.5 w-96 mb-5"
                                                         name="Message"
-                                                    /><br />
+                                                        placeholder="Message"
+                                                    ></textarea>
+                                                    <br />
 
                                                     <button
                                                         @click.prevent="sendResponse"
@@ -313,7 +314,7 @@ export default {
             type: [Object, Array],
         },
         id:{
-            type:Number
+            type:Number,
         }
 
     },

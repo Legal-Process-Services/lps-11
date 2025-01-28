@@ -23,10 +23,11 @@ class FirmController extends Controller
         $outFirm = $customer->outstandingFirm()->get();
 
 
+
         $client = "test";
         $data = [
             'client' => $client,
-            'outFirm' => $outFirm,
+            'outHearing' => $outHearing,
 //            'customers' => $$customer,
         ];
 
@@ -64,7 +65,96 @@ class FirmController extends Controller
     ];
 
 
-    return Inertia::render('Firm/AccountBalance', $data);
+
+    return Inertia::render('Firm/Account-Balance', $data);
 }
+
+public function getPayAccountBalance(Request $request)
+{
+    /** @var User $user */
+    $user = Auth::user();
+
+    $customer = $user->customer;
+
+    $outFirm = $customer->outstandingFirm()->get();
+
+
+    $client = "test";
+    $data = [
+        'client' => $client,
+        'outFirm' => $outFirm,
+    ];
+
+
+
+    return Inertia::render('Firm/Pay-Account-Balance', $data);
+}
+
+    public function getPaySelectInvoices(Request $request)
+    {
+        /** @var User $user */
+        $user = Auth::user();
+
+        $customer = $user->customer;
+
+        $outFirm = $customer->outstandingFirm()->get();
+
+
+        $client = "test";
+        $data = [
+            'client' => $client,
+            'outFirm' => $outFirm,
+        ];
+
+
+
+        return Inertia::render('Firm/Pay-Select-Invoices', $data);
+    }
+
+    public function getPymtStubCheck(Request $request)
+    {
+        /** @var User $user */
+        $user = Auth::user();
+
+        $customer = $user->customer;
+
+        $outFirm = $customer->outstandingFirm()->get();
+
+
+        $client = "test";
+        $data = [
+            'client' => $client,
+            'outFirm' => $outFirm,
+        ];
+
+
+
+        return Inertia::render('Firm/Pymt-Stub-Check', $data);
+    }
+
+    public function getHearingDate(Request $request)
+    {
+        /** @var User $user */
+        $user = Auth::user();
+
+        $customer = $user->customer;
+
+        $sevendaysago = Carbon::now()->subDays(7)->format('D F j, Y');
+
+        $outFirm = $customer->outstandingFirm()->get();
+
+
+        $client = "test";
+        $data = [
+            'client' => $client,
+            'outFirm' => $outFirm,
+            'sevendaysago' => $sevendaysago,
+
+        ];
+
+
+
+        return Inertia::render('Firm/Hearing-Date', $data);
+    }
 
 }

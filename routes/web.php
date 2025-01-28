@@ -46,6 +46,10 @@ Route::middleware(['auth:sanctum', 'verified', 'client.linked'])->group(function
     Route::get('/client-response/{id}', [ClientResponseController::class, 'show'])->name('client-response');
     Route::get('/firm', [FirmController::class, 'getAccountBalance'])->name('firm');
     Route::get('/account-balance', [FirmController::class, 'getAccountBalance'])->name('account-balance');
+    Route::get('/pay-account-balance', [FirmController::class, 'getPayAccountBalance'])->name('pay-account-balance');
+    Route::get('/pay-select-invoices', [FirmController::class, 'getPaySelectInvoices'])->name('pay-select-invoices');
+    Route::get('/hearing-date', [FirmController::class, 'getHearingDate'])->name('hearing-date');
+    Route::get('/pymt-stub-check', [FirmController::class, 'getPymtStubCheck'])->name('pymt-stub-check');
     Route::get('/dashboard/paid-invoices', [DashboardController::class, 'getPaidInvoices'])->name('dashboard-paid-invoices');
     Route::get('/invoice/{id}/pay', [InvoiceController::class, 'pay'])->name('invoice.pay');
     Route::post('/invoice/{id}/client-response', [InvoiceController::class, 'clientResponse'])->name('invoice.client-response');
