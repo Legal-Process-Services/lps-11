@@ -156,5 +156,47 @@ public function getPayAccountBalance(Request $request)
 
         return Inertia::render('Firm/Hearing-Date', $data);
     }
+    public function getHearingDatePrint(Request $request)
+    {
+        /** @var User $user */
+        $user = Auth::user();
+
+        $customer = $user->customer;
+
+        $sevendaysago = Carbon::now()->subDays(7)->format('D F j, Y');
+
+        $outFirm = $customer->outstandingFirm()->get();
+
+
+        $client = "test";
+        $data = [
+            'client' => $client,
+            'outFirm' => $outFirm,
+            'sevendaysago' => $sevendaysago,
+
+        ];
+
+
+
+        return Inertia::render('Firm/Hearing-Date-Print', $data);
+    }
+    public function getSpreadsheet(Request $request)
+    {
+        /** @var User $user */
+        $user = Auth::user();
+
+        $customer = $user->customer;
+
+        $outFirm = $customer->outstandingFirm()->get();
+
+
+        $client = "test";
+        $data = [
+            'client' => $client,
+
+        ];
+
+        return Inertia::render('Firm/Spreadsheet', $data);
+    }
 
 }

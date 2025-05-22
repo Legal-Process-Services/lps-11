@@ -117,6 +117,7 @@
 
         </div>
     </div>
+    </div>
 </template>
 <style scoped>
 .lds-ring {

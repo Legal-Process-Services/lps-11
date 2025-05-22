@@ -30,10 +30,13 @@ class DashboardController extends Controller
 
         $outInvoices = $customer->outstandingInvoices()->orderByDesc('WorkOrderNo', 'asc')->limit(5)->get();
 
+        $oneRow= $customer->outstandingInvoices()->orderByDesc('WorkOrderNo', 'asc')->limit(1)->get();
+
         $data = [
             'outInvoices' => $outInvoices,
             'outFirm' => $outFirm,
             'sixmoago' => $sixmoago,
+            'oneRow' => $oneRow,
         ];
 
 
@@ -69,5 +72,11 @@ class DashboardController extends Controller
             ->where(  'N1010C_Date', ">" . $sixmoago)->orderByDesc('WorkOrderNo')->paginate(5);
 
         return $invoices;
+
+
+        $openinvoices = Invoice::where('Attorney_ID', $customer->AttnyID)
+           ->orderByDesc('WorkOrderNo')->paginate(5);
+
+        return $openinvoices;
     }
 }

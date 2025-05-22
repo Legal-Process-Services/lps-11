@@ -83,7 +83,7 @@
                     </thead>
                     <div class="pt-6">
                         <hr />
-                        <div>Process Information</div>
+                        Process Information
                         <hr />
                     </div>
                     <thead class="text-gray-500 text-med">
@@ -134,7 +134,7 @@
                     </thead>
                     <div class="pt-6">
                         <hr />
-                        <div>Service Request</div>
+                        Service Request
                         <hr />
                     </div>
                     <thead class="text-gray-500 text-med">

@@ -59,13 +59,8 @@
                         class="py-2 align-middle inline-block w-full sm:px-6 lg:px-8 pl-3.5"
                     >
                         <div
-                            class="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg pt-4 p-4 pb-10 mb-2.5 bg-white"
+                            class="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg pt-4 p-4 pb-5 mb-2.5 bg-white"
                         >
-<!--                            <table-->
-<!--                            class="w-full divide-y divide-gray-200 table-auto"-->
-<!--                        >-->
-
-<!--                            <thead>-->
                             <div
                                 class="flex items-center hover:text-indigo-500 hover:font-weight-bolder hover:cursor-pointer pt-2"
                             >
@@ -90,23 +85,29 @@
                             <div
                                 class="flex items-center hover:text-indigo-500 hover:font-weight-bolder hover:cursor-pointer pt-2"
                             >
-                                <a href="account-balance">
-                                    &nbsp;<button
-                                    class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+                                <button
+                                    class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-1"
+                                    onclick="alert('Need js to UNcheck all')"
                                 >
-                                    Back
-                                </button></a>&nbsp;
-<!--                                <a href="pay-account-balance">-->
-<!--                                <button-->
-<!--                                    class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"-->
-<!--                                    onclick=""-->
-<!--                                >-->
-<!--                                    Pay Account Balance-->
-<!--                                </button></a>-->
-
+                                    <a href="invoice_print_selected">
+                                    View Invoices Selected
+                                </a>
+                                </button>
+                                <button
+                                    class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-1 ml-1"
+                                    >
+                                    <a href="pymt-stub-check">
+                                    Print Payment Stub
+                                    </a>
+                                </button>
+                                <a href="spreadsheet">
+                                <button
+                                    class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-1 ml-1"
+                                >
+                                    Spreadsheet
+                                </button>
+                                </a>
                             </div>
-<!--                            </thead>-->
-<!--                        </table>-->
                         </div>
                     </div>
                 </div>
@@ -157,7 +158,8 @@
 //import Pagination from "@/Pages/Components/Pagination.vue";
 import attemptDetail from "@/Pages/Attempt/AttemptDetail.vue";
 import { attempt } from "lodash";
-import { Link } from '@inertiajs/vue3'
+import { Link } from '@inertiajs/vue3';
+import {link} from "@inertiajs/inertia-vue3/src";
 
 export default {
     name: "statement",

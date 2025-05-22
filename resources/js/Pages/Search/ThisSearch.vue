@@ -577,7 +577,7 @@
                                         <td
                                             class="px-3 md:px-6 py-4 whitespace-nowrap text-sm text-gray-900 align-text-top"
                                         >
-                                            fdgdfg
+                                            {{ search.DateServed }}
                                         </td>
                                         <td
                                             class="px-3 md:px-6 py-4 whitespace-normal align-text-top"

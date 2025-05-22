@@ -47,7 +47,7 @@
                                             scope="col"
                                             class="pl-4 md:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
                                         >
-                                            Client ID
+                                            Client ID ABC
                                         </th>
                                         <th
                                             scope="col"

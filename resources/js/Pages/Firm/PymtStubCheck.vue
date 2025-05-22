@@ -31,13 +31,6 @@
                         v-on:click="clickRow(invoice.id)"
                     >
                         <div>
-                            <div class="">
-                                <Link
-                                    class="text-blue-500 hover:text-blue-600 underline text-sm font-medium"
-                                    :href="route('invoice.detail', invoice.id)"
-                                >#{{ invoice.id }}
-                                </Link>
-                            </div>
                             <div class="text-xs text-gray-500">
                                 Date: {{ invoice.DateServed }}
                             </div>
@@ -122,90 +115,79 @@
 <table>
                                             <TR>
                                                 <TD COLSPAN="3" CLASS="style13"><P><SPAN CLASS="style22"></SPAN><SPAN CLASS="style22"></SPAN>
-
-                                                    <TABLE WIDTH="90%" BORDER="0" ALIGN="center" CELLPADDING="0" CELLSPACING="0" >
-                                                        <TR>
-                                                            <TD ROWSPAN="9" VALIGN="top"></TD>
-                                                            <TD ROWSPAN="9" ALIGN="left" VALIGN="middle" nowrap CLASS="style13">
-                                                                <TABLE WIDTH="90%" BORDER="0" CLASS="style29">
-                                                                <TR>
-                                                                    <TD WIDTH="65" ALIGN="left"  class="style19">Invoice #</TD>
-                                                                    <TD WIDTH="80" ALIGN="left"  class="style19">Inv. Date </TD>
-                                                                    <TD WIDTH="110" ALIGN="left"  class="style19">Case #</TD>
-                                                                    <TD WIDTH="299" ALIGN="left" CLASS="style19">Served To</TD>
-                                                                    <TD WIDTH="100" ALIGN="right" CLASS="style19">Amt Due</TD>
-                                                                </TR>
-                                                                </TABLE>
-                                                            </TD>
-                                                        </TR>
-                                                    </TABLE>
                                                 </P>
-                                                            </TD>
+                                                  </TD>
                                                         </TR></table>
-
-
-                                                    <TABLE WIDTH="90%" BORDER="0" ALIGN="center" CELLPADDING="0" CELLSPACING="0" >
-                                                        <TR>
-                                                            <TD ROWSPAN="9" VALIGN="top"></TD>
-                                                            <TD ROWSPAN="9" ALIGN="left" VALIGN="middle" nowrap CLASS="style13" ><TABLE WIDTH="90%" BORDER="0" CLASS="style29">
-                                                                <TR>
-                                                                    <TD WIDTH="64" ALIGN="left" CLASS="style19">2004197</TD>
-                                                                    <TD WIDTH="95" ALIGN="left" CLASS="style19">5/21/2020</TD>
-                                                                    <TD WIDTH="121" ALIGN="left" CLASS="style19"></TD>
-                                                                    <TD WIDTH="223" ALIGN="left" CLASS="style19"></TD>
-                                                                    <TD WIDTH="217" ALIGN="right" CLASS="style19">&nbsp;$45.98</TD>
-                                                                </TR>
-                                                            </TABLE></TD>
-                                                        </TR>
-                                                    </TABLE>
-
-
-                                                    <TABLE WIDTH="90%" BORDER="0" ALIGN="center" CELLPADDING="0" CELLSPACING="0" >
-                                                        <TR>
-                                                            <TD ROWSPAN="9" VALIGN="top"></TD>
-                                                            <TD ROWSPAN="9" ALIGN="left" VALIGN="middle" nowrap CLASS="style13" ><TABLE WIDTH="90%" BORDER="0" CLASS="style29">
-                                                                <TR>
-                                                                    <TD WIDTH="64" ALIGN="left" CLASS="style19">2103152</TD>
-                                                                    <TD WIDTH="95" ALIGN="left" CLASS="style19">3/8/2022</TD>
-                                                                    <TD WIDTH="121" ALIGN="left" CLASS="style19">2121212121</TD>
-                                                                    <TD WIDTH="223" ALIGN="left" CLASS="style19">Lauryn Hill</TD>
-                                                                    <TD WIDTH="217" ALIGN="right" CLASS="style19">&nbsp;$67.24</TD>
-                                                                </TR>
-                                                            </TABLE></TD>
-                                                        </TR>
-                                                    </TABLE>
-
-
-
-                                                    <SPAN CLASS="style22">
-
-            </SPAN>
-                                                    <TABLE WIDTH="90%" BORDER="0" ALIGN="center" CELLPADDING="0" CELLSPACING="0" >
-                                                        <TR>
-                                                            <TD ROWSPAN="9" VALIGN="top" STYLE="padding:0pt;"></TD>
-                                                            <TD ROWSPAN="9" ALIGN="left" VALIGN="middle" nowrap CLASS="style13" STYLE="padding:0pt;"><TABLE WIDTH="90%" BORDER="0" CLASS="style29">
-                                                                <TR>
-                                                                    <TD WIDTH="64" ALIGN="left"  class="style19">&nbsp;&nbsp;</TD>
-                                                                    <TD WIDTH="81" ALIGN="left"  class="style19">&nbsp;&nbsp;</TD>
-                                                                    <TD WIDTH="110" ALIGN="left"  class="style19">&nbsp;&nbsp;</TD>
-                                                                    <TD WIDTH="247" ALIGN="left" CLASS="style19">&nbsp;&nbsp;</TD>
-                                                                    <TD WIDTH="218" ALIGN="right" CLASS="style19"><STRONG>Total Amount Due:&nbsp;<SPAN CLASS="style22">&nbsp;$113.22</SPAN></STRONG></TD>
-                                                                </TR>
-                                                                <TR>
-                                                                    <TD WIDTH="64" ALIGN="left"  class="style19">&nbsp;&nbsp;</TD>
-                                                                    <TD WIDTH="81" ALIGN="left"  class="style19">&nbsp;&nbsp;</TD>
-                                                                    <TD WIDTH="110" ALIGN="left"  class="style19">&nbsp;&nbsp;</TD>
-                                                                    <TD WIDTH="247" ALIGN="left" CLASS="style19">&nbsp;&nbsp;</TD>
-                                                                    <TD WIDTH="218" ALIGN="right" CLASS="style19">Paid By: ____________________</TD>
-                                                                </TR>
-                                                            </TABLE></TD>
-                                                        </TR>
-                                                    </TABLE>
                             </div>
 
                                 <div
-                                    class="flex items-center hover:text-indigo-500 hover:font-weight-bolder hover:cursor-pointer pt-5"
-                                > test
+                                    class="flex items-center hover:text-indigo-500 hover:font-weight-bolder pt-5"
+                                >
+
+                                    <TABLE WIDTH="90%" BORDER="0" ALIGN="center" CELLPADDING="0" CELLSPACING="0" >
+                                        <TR>
+                                            <TD ROWSPAN="9" VALIGN="top"></TD>
+                                            <TD ROWSPAN="9" ALIGN="left" VALIGN="middle" nowrap CLASS="style13">
+                                                <TABLE WIDTH="90%" BORDER="0" CLASS="style29" style="margin-bottom:60px;">
+                                                    <TR>
+                                                        <TD WIDTH="65" ALIGN="left"  class="style19">Invoice #</TD>
+                                                        <TD WIDTH="80" ALIGN="left"  class="style19">Inv. Date </TD>
+                                                        <TD WIDTH="110" ALIGN="left"  class="style19">Case #</TD>
+                                                        <TD WIDTH="299" ALIGN="left" CLASS="style19">Served To</TD>
+                                                        <TD WIDTH="100" ALIGN="right" CLASS="style19">Amt Due</TD>
+                                                    </TR>
+                                                    <TR>
+                                                        <TD WIDTH="64" ALIGN="left" CLASS="style19">2004197</TD>
+                                                        <TD WIDTH="95" ALIGN="left" CLASS="style19">5/21/2020</TD>
+                                                        <TD WIDTH="121" ALIGN="left" CLASS="style19"></TD>
+                                                        <TD WIDTH="223" ALIGN="left" CLASS="style19"></TD>
+                                                        <TD WIDTH="217" ALIGN="right" CLASS="style19">&nbsp;$45.98</TD>
+                                                    </TR>
+                                                    <TR>
+                                                        <TD WIDTH="64" ALIGN="left"  class="style19">&nbsp;&nbsp;</TD>
+                                                        <TD WIDTH="81" ALIGN="left"  class="style19">&nbsp;&nbsp;</TD>
+                                                        <TD WIDTH="110" ALIGN="left"  class="style19">&nbsp;&nbsp;</TD>
+                                                        <TD WIDTH="247" ALIGN="left" CLASS="style19">&nbsp;&nbsp;</TD>
+                                                        <TD WIDTH="218" ALIGN="right" CLASS="style19"><STRONG>Total Amount Due:&nbsp;<SPAN CLASS="style22">&nbsp;$113.22</SPAN></STRONG></TD>
+                                                    </TR>
+                                                    <tr ROWSPAN="9" ALIGN="left" VALIGN="middle" nowrap CLASS="style13">
+                                                        <div style="text-align: center; column-span: all;">Keep this portion for your records
+                                                        </div>
+                                                    </tr>
+                                                </TABLE>
+                                                <hr>
+                                                <TABLE WIDTH="90%" BORDER="0" CLASS="style29" style="margin-top:60px;">
+                                                    <tr><td><DIV align="center" STYLE="padding-top:10px;">Please return this portion
+                                                        your payment. Make checks payable to Legal Process Service</DIV></td></tr>
+                                                    <TR>
+                                                        <TD WIDTH="65" ALIGN="left"  class="style19">Invoice #</TD>
+                                                        <TD WIDTH="80" ALIGN="left"  class="style19">Inv. Date </TD>
+                                                        <TD WIDTH="110" ALIGN="left"  class="style19">Case #</TD>
+                                                        <TD WIDTH="299" ALIGN="left" CLASS="style19">Served To</TD>
+                                                        <TD WIDTH="100" ALIGN="right" CLASS="style19">Amt Due</TD>
+                                                    </TR>
+                                                    <TR>
+                                                        <TD WIDTH="64" ALIGN="left" CLASS="style19">2004197</TD>
+                                                        <TD WIDTH="95" ALIGN="left" CLASS="style19">5/21/2020</TD>
+                                                        <TD WIDTH="121" ALIGN="left" CLASS="style19"></TD>
+                                                        <TD WIDTH="223" ALIGN="left" CLASS="style19"></TD>
+                                                        <TD WIDTH="217" ALIGN="right" CLASS="style19">&nbsp;$45.98</TD>
+                                                    </TR>
+                                                    <TR>
+                                                        <TD WIDTH="64" ALIGN="left"  class="style19">&nbsp;&nbsp;</TD>
+                                                        <TD WIDTH="81" ALIGN="left"  class="style19">&nbsp;&nbsp;</TD>
+                                                        <TD WIDTH="110" ALIGN="left"  class="style19">&nbsp;&nbsp;</TD>
+                                                        <TD WIDTH="247" ALIGN="left" CLASS="style19">&nbsp;&nbsp;</TD>
+                                                        <TD WIDTH="218" ALIGN="right" CLASS="style19"><STRONG>Total Amount Due:&nbsp;<SPAN CLASS="style22">&nbsp;$113.22</SPAN></STRONG></TD>
+                                                    </TR>
+                                                </TABLE>
+                                            </td>
+                                        </TR>
+                                    </TABLE>
+
+
+
+
                             </div>
                         </div>
                     </div>

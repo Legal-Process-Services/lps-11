@@ -27,6 +27,7 @@
         "vue": "^3.3.13"
     },
     "dependencies": {
-        "browser-sync": "^3.0.3"
+        "browser-sync": "^3.0.3",
+        "sweetalert": "^2.1.2"
     }
 }

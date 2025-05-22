@@ -1,15 +1,11 @@
-<template>
-    <app-layout>
-        <template #header>
             <h2
                 class="font-semibold text-xl text-gray-800 leading-tight float-left"
             >
                 Dashboard
             </h2>
             <div>
-                &nbsp;
+                &nbsp;.
             </div>
-        </template>
 
         <div class="basis-3/4 columns-sm">
             <div class="py-2">
@@ -39,8 +35,6 @@
                 </div>
             </div>
         </div>
-    </app-layout>
-</template>
 
 <script>
 import AppLayout from"@/Layouts/AppLayout.vue"

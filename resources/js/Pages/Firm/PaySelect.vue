@@ -2,8 +2,9 @@
     <div class="flex flex-col">
         <div class="-my-2 sm:-mx-6 lg:-mx-8">
             <div class="py-2 align-middle inline-block w-full sm:px-6 lg:px-8">
-                <div class="text-lg mb-5 pl-5 font-light text-gray-600">
+                <div class="text-lg mb-1 pl-5 font-light text-gray-600">
                     Select Invoices
+                    <img src="img/down-arrow.png" alt="Select Checkboxes Below" style="width: 15px;" class="ml-10">
                 </div>
                 <!--                 Table Mobile -->
                 <div class="grid gap-y-4 sm:hidden">
@@ -110,7 +111,7 @@
                     >
                         <div
                             class="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg"
-                        >
+                        > <form name="myform" action="pymt_stub.asp" method="post" onSubmit="return OnSubmitForm();">
                             <table
                                 class="w-full divide-y divide-gray-200 table-auto"
                             >
@@ -120,49 +121,51 @@
                                             scope="col"
                                             class="pl-3 md:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider width: 200px;"
                                         >
-                                            Work Order
+                                                <button
+                                                class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+                                                onclick="checkAll(document.myform.baldue,'workorders',113.221542)"
+                                            >
+                                                Check All
+                                            </button><br>
+                                                &nbsp;<button
+                                                class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-1"
+                                                onclick="uncheckAll(document.myform.baldue,'workorders')"
+
+
+                                            >
+                                                Uncheck
+                                            </button>
+                                        </th>
+                                        <th
+                                            scope="col"
+                                            class="pl-3 md:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+                                        ><br><br><br>
+                                            Invoice #
                                         </th>
                                         <th
                                             scope="col"
                                             class="px-3 md:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
-                                        >
-                                            &nbsp;
+                                        ><br><br><br>
+                                            Contact
                                         </th>
                                         <th
                                             scope="col"
                                             class="px-3 md:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
-                                        >
-                                            &nbsp;
+                                        ><br><br><br>
+                                           Inv. Date
                                         </th>
+
                                         <th
                                             scope="col"
                                             class="px-3 md:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
-                                        >
-                                            &nbsp;
-                                        </th>
-                                        <th
-                                            scope="col"
-                                            class="px-3 md:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
-                                        >
-                                            &nbsp;
+                                        ><br><br><br>
+                                            Case #
                                         </th>
                                         <th
                                             scope="col"
                                             class="px-3 md:px-6 py-3 text-xs font-medium text-gray-500 uppercase tracking-wider"
-                                        >
-                                            Status
-                                        </th>
-                                        <th
-                                            scope="col"
-                                            class="px-3 md:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
-                                        >
-                                            Served On
-                                        </th>
-                                        <th
-                                            scope="col"
-                                            class="px-3 md:px-6 py-3 text-xs font-medium text-gray-500 uppercase tracking-wider"
-                                        >
-                                            Update(s)
+                                        ><br><br><br>
+                                            Inv. Amount
                                         </th>
                                     </tr>
                                 </thead>
@@ -185,6 +188,8 @@
                                     <tr
                                         v-if="invoices.length === 0 && !loading"
                                         class="shadow bg-white h-16 text-gray-500"
+                                        iRecordCount = 1
+                                    ' Count how many records exist
                                     >
                                         <td colspan="5" class="text-center">
                                             You have no Work Orders in the past
@@ -195,98 +200,49 @@
                                     <tr
                                         v-if="!loading"
                                         v-for="invoice in invoices"
-                                        v-on:click="clickRow(invoice.id)"
                                     >
                                         <td
-                                            class="pl-3 md:px-6 py-4 flex-wrap"
-                                            colspan="5"
+                                            class="px-3 md:px-6 py-4 whitespace-nowrap text-sm text-gray-900 align-text-top"
                                         >
-                                            <div class="flex items-center">
-                                                <div
-                                                    class="text-md font-medium"
-                                                >
-                                                    <b>{{ invoice.id }}</b>
-                                                    <br /><br />
-                                                    File Name
-                                                    <b>{{
-                                                        invoice.Docket_ID
-                                                    }}</b>
-                                                    <br />Case No
-                                                    <b>{{ invoice.Case_No }}</b>
-                                                    <br />Entered
-                                                    <b>{{
-                                                        invoice.N1010C_Date
-                                                    }}</b>
-                                                    <br />Received
-                                                    <b>
-                                                        {{
-                                                            invoice.DateRecdfromAttnys
-                                                        }}</b
-                                                    ><br />Serve To
-                                                    <b>
-                                                        {{
-                                                            invoice.Serve_To
-                                                        }}</b
-                                                    >
-                                                    <br />Client/Insured
-                                                    <b>{{ invoice.Insured }}</b>
-                                                    <br /><Link
-                                                        :href="
-                                                            route(
-                                                                'invoice.detail',
-                                                                invoice.id,
-                                                            )
-                                                        "
-                                                        @click.stop=""
-                                                        class="px-2 py-1"
-                                                    >
-                                                        Worksheet </Link
-                                                    >|
-                                                    <Link  :href="
-                                                            route(
-                                                                'attempt.detail',
-                                                                invoice.id,
-                                                            )
-                                                        "
-                                                           @click.stop=""
-                                                           class="px-2 py-1">Attempt History</Link>
-                                                    <br /><Link
-                                                        :href="
-                                                            route(
-                                                                'client-response',
-                                                                invoice.id,
-                                                            )
-                                                        "
-                                                        @click.stop=""
-                                                        class="px-2 py-1"
-                                                        >Email LPS about this
-                                                        service</Link
-                                                    >
-                                                </div>
-                                            </div>
+                                                                                        <input name="baldue" type="checkbox" value="{{ invoice.id }}"
+                                                   onClick="AddThis(this,'workorders',{{ invoice.TotalAmountDueTABLE }}" style="margin-left:30px;"
+                                        </td>
+                                        <td
+                                            class="pl-3 md:px-6 py-4 flex-wrap"
+                                        >
+                                            <b>{{ invoice.id }}</b>
+
                                         </td>
                                         <td
                                             class="px-3 md:px-6 py-4 whitespace-nowrap text-sm text-gray-900 align-text-top"
                                         >
                                             <div class="">
-                                                {{ invoice.total }}
+                                                {{ invoice.ContactID }}
                                             </div>
-                                        </td>
+                                        </td><td
+                                        class="px-3 md:px-6 py-4 whitespace-nowrap text-sm text-gray-900 align-text-top"
+                                    >
+                                        <div class="">
+                                            {{ invoice.InvoiceDate }}
+                                        </div>
+                                    </td>
                                         <td
                                             class="px-3 md:px-6 py-4 whitespace-nowrap text-sm text-gray-900 align-text-top"
                                         >
-                                            {{ invoice.DateServed }}
+                                            <div class="">
+                                                {{ invoice.Case_No }} &nbsp;&nbsp;{{ invoice.Docket_ID }}
+                                            </div>
                                         </td>
                                         <td
-                                            class="px-3 md:px-6 py-4 whitespace-normal align-text-top"
+                                            class="px-3 md:px-6 py-4 whitespace-normal text-sm text-gray-900 align-text-top"
                                         >
                                             <div>
-                                                {{ invoice.InvoiceFaxRemarks }}
+                                                {{ invoice.TotalAmountDueTABLE }}
                                             </div>
                                         </td>
                                     </tr>
                                 </tbody>
-                            </table>
+                            </table></form>
                         </div>
                         <div class="container"></div>
 <!--                        <pagination-->
@@ -340,6 +296,9 @@
 </style>
 
 <script>
+function checkAll() {
+    alert("Hello, world!");
+}
 //import Pagination from "@/Pages/Components/Pagination";
 import attemptDetail from "@/Pages/Attempt/AttemptDetail.vue";
 import { attempt } from "lodash";

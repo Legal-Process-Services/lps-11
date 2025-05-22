@@ -136,7 +136,7 @@
                 <div
                     class="hidden sm:block text-lg mb-5 pl-5 font-light text-gray-600 sm:hidden"
                 >
-                    Your Search Results
+                    Your Search Results JCZ
                 </div>
                 <div class="grid gap-y-4 sm:hidden">
                     <div

@@ -18,12 +18,18 @@ export default defineConfig({
             },
         }),
     ],
-    resolve:{
-        alias:{
+    resolve: {
+        alias: {
             '@': path.resolve(__dirname, 'resources/js')
         }
     },
     define: {
         'process.env': process.env
+    },
+    server: {
+        // Allow requests from http://lps-11.test
+        cors: {
+            origin: 'http://lps-11.test'
+        }
     }
 });

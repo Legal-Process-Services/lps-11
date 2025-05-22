@@ -26,7 +26,7 @@
                 <div class="max-w-7xl mx-auto sm:px-6 lg:px-4">
                     <div class="my-5"></div>
                     <select-invoices :invoices="outInvoices"/>
-                    <pay-select :invoices="outInvoices" />
+                    <pay-select :invoices="openInvoices" />
                 </div>
             </div>
         </div>
@@ -73,6 +73,7 @@ export default {
     },
     props: {
         outInvoices: Object,
+        openInvoices: Object,
         outFirm: Object,
         customers: Object,
         sixmoago: String,
