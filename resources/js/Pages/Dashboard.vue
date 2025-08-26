@@ -1,19 +1,19 @@
-            <h2
-                class="font-semibold text-xl text-gray-800 leading-tight float-left"
-            >
-                Dashboard
-            </h2>
-            <div>
-                &nbsp;.
-            </div>
+<template>
+<div>
+    <h2
+        class="font-semibold text-xl text-gray-800 leading-tight float-left"
+    >
+        Dashboard
+    </h2>
 
-        <div class="basis-3/4 columns-sm">
-            <div class="py-2">
-                <div class="my-5"></div>
-                <outstanding-firm
-                    :customers="outFirm"
-                    :sixmoago="sixmoago"
-                />
+
+    <div class="basis-3/4 columns-sm">
+        <div class="py-2">
+            <div class="my-5"></div>
+            <outstanding-firm
+                :customers="outFirm"
+                :sixmoago="sixmoago"
+            />
 
 
             <div class="py-2">
@@ -34,6 +34,10 @@
             </div>
         </div>
 
+    </div>
+</div>
+
+</template>
 <script>
 import AppLayout from"@/Layouts/AppLayout.vue"
 //import Welcome from "@/Jetstream/Welcome";

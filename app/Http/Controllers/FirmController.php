@@ -23,12 +23,13 @@ class FirmController extends Controller
         $outFirm = $customer->outstandingFirm()->get();
 
 
-
         $client = "test";
         $data = [
             'client' => $client,
             'outHearing' => $outHearing,
-//            'customers' => $$customer,
+            'oneRow' => $oneRow,
+            'customer' => $customer,
+            'outfirm' => $outFirm,
         ];
 
 
@@ -187,16 +188,43 @@ public function getPayAccountBalance(Request $request)
 
         $customer = $user->customer;
 
-        $outFirm = $customer->outstandingFirm()->get();
+        $here = $user->customer;
+
+//        dd($here);
+
+//        if ($user->customer->exists()) {
+//            // user found
+//            dd($customer);
+//        }
 
 
-        $client = "test";
         $data = [
-            'client' => $client,
+            'customer' => $customer,
+            'here' => $here,
 
         ];
 
         return Inertia::render('Firm/Spreadsheet', $data);
+    }
+
+    public function getExcelExport(Request $request)
+    {
+        /** @var User $user */
+        $user = Auth::user();
+
+        $customer = $user->customer;
+
+        $here = $user->customer;
+
+
+
+        $data = [
+            'customer' => $customer,
+            'here' => $here,
+
+        ];
+
+        return Inertia::render('Firm/Spreadsheet-Excel', $data);
     }
 
 }

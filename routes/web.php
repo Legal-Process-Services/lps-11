@@ -48,6 +48,7 @@ Route::middleware(['auth:sanctum', 'verified', 'client.linked'])->group(function
     Route::get('/account-balance', [FirmController::class, 'getAccountBalance'])->name('account-balance');
     Route::get('/pay-account-balance', [FirmController::class, 'getPayAccountBalance'])->name('pay-account-balance');
     Route::get('/spreadsheet', [FirmController::class, 'getSpreadsheet'])->name('spreadsheet');
+    Route::get('/spreadsheet-excel', [FirmController::class, 'getExcelExport'])->name('spreadsheet-excel');
     Route::get('/pay-select-invoices', [FirmController::class, 'getPaySelectInvoices'])->name('pay-select-invoices');
     Route::get('/hearing-date', [FirmController::class, 'getHearingDate'])->name('hearing-date');
     Route::get('/hearing-date-print', [FirmController::class, 'getHearingDatePrint'])->name('hearing-date-print');

@@ -201,36 +201,31 @@
                                         v-if="!loading"
                                         v-for="invoice in invoices"
                                     >
-                                        <td
-                                            class="px-3 md:px-6 py-4 whitespace-nowrap text-sm text-gray-900 align-text-top"
-                                        >
-                                           jeanie2 <input name="baldue" type="checkbox" value="{{ invoice.id }}" onClick="AddThis(this,'workorders',<{{
-                                                   TotalAmountDueTABLE>)}}">
-
-                                        </td>
-                                        <td
-                                            class="pl-3 md:px-6 py-4 flex-wrap"
-                                        >
+                                        <td class=px-3 md:px-6 py-4 whitespace-nowrap text-sm text-gray-900 align-text-top>
+                                            <input name="baldue" onClick="AddThis(this,'workorders',{{ invoice.id }})">
+                                            <INPUT  name="balDue_{{ invoice.iRecordCount }}" value="{{ invoice.TotalAmountDueTABLE }}"/>
+                                    </td>
+                                        <td class=pl-3 md:px-6 py-4 flex-wrap>
                                             <b>{{ invoice.id }}</b>
 
                                         </td>
                                         <td
-                                            class="px-3 md:px-6 py-4 whitespace-nowrap text-sm text-gray-900 align-text-top"
+                                            class=px-3 md:px-6 py-4 whitespace-nowrap text-sm text-gray-900 align-text-top
                                         >
-                                            <div class="">
+                                            <div>
                                                 {{ invoice.ContactID }}
                                             </div>
                                         </td><td
-                                        class="px-3 md:px-6 py-4 whitespace-nowrap text-sm text-gray-900 align-text-top"
+                                        class=px-3 md:px-6 py-4 whitespace-nowrap text-sm text-gray-900 align-text-top
                                     >
-                                        <div class="">
+                                        <div>
                                             {{ invoice.InvoiceDate }}
                                         </div>
                                     </td>
                                         <td
-                                            class="px-3 md:px-6 py-4 whitespace-nowrap text-sm text-gray-900 align-text-top"
+                                            class=px-3 md:px-6 py-4 whitespace-nowrap text-sm text-gray-900 align-text-top
                                         >
-                                            <div class="">
+                                            <div type="checkbox" value="{{ invoice.id }}"">
                                                 {{ invoice.Case_No }} &nbsp;&nbsp;{{ invoice.Docket_ID }}
                                             </div>
                                         </td>

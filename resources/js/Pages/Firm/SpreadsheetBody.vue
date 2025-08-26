@@ -452,7 +452,7 @@ import RightNav2 from "@/Pages/Dashboard/RightNav2.vue";
 import {Link} from '@inertiajs/vue3';
 
 export default {
-    name: "PaySelect",
+    name: "SpreadsheetBody",
     computed: {
         attemptDetail() {
             return attemptDetail;
@@ -461,7 +461,7 @@ export default {
     components: { RightNav2, RightNav,Link },
     props: {},
     remember: {
-        data: ["currentPage", "invoices", "oneRow","loading", "links"],
+        data: ["currentPage", "invoices", "customer", "customers", "oneRow","loading", "links"],
         key: "PaySelect",
     },
     methods: {
@@ -499,13 +499,13 @@ export default {
         // initialize on page 1
         if (this.loading) {
             this.getInvoices(this.currentPage);
-            this.oneRow(this.currentPage)
         }
     },
     data() {
         return {
             loading: true,
             invoices: Array,
+            customers: Array,
             oneRow: Array,
             links: Array,
             currentPage: 1,

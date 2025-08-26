@@ -4,39 +4,31 @@
             <h2
                 class="font-semibold text-xl text-gray-800 leading-tight float-left"
             >
-                Spreadsheet
+                Hearing Dates Print
             </h2>
             <div>
                 &nbsp;
             </div>
         </template>
-        <div class="basis-3/4">
-            <div class="py-2">
-                <div class="max-w-7xl mx-auto sm:px-6 lg:px-4">
-                    <div class="my-5"></div>
-                    <Spreadsheet_checkboxes
-                        :customers="outFirm"
-                    />
-                </div>
-            </div>
-        </div>
 
         <div class="basis-3/4">
             <div class="py-2">
                 <div class="max-w-7xl mx-auto sm:px-6 lg:px-4">
                     <div class="my-5"></div>
-                    <Spreadsheet_header
+                    <hearing-list-firm-print
                         :customers="outFirm"
+                        :sixmoago="sixmoago"
+                        :sevendaysago="sevendaysago"
                     />
                 </div>
             </div>
 
             <div class="py-2">
-                <div class="mx-auto sm:px-6 lg:px-4">
+                <div class="max-w-7xl mx-auto sm:px-6 lg:px-4">
                     <div class="my-5"></div>
-                    <spreadsheet-body  :invoices="outInvoices"
-                                       :sevendaysago="sevendaysago"
-                                       :customers="outFirm"/>
+                        <hearing-date-print :hearingdates="outstandingHearingDates"
+                                      :sevendaysago="sevendaysago"
+                                      :customers="outFirm"/>
                 </div>
             </div>
         </div>
@@ -56,16 +48,10 @@ import hearingListFirm from "@/Pages/Dashboard/HearingListFirm.vue";
 import hearingListFirmPrint from "@/Pages/Dashboard/HearingListFirmPrint.vue";
 import hearingDate from "@/Pages/Firm/HearingDate.vue";
 import hearingDatePrint from "@/Pages/Firm/HearingDatePrint.vue";
-import Spreadsheet_header from "@/Pages/Dashboard/Spreadsheet_header.vue";
-import Spreadsheet_checkboxes from "@/Pages/Dashboard/Spreadsheet_checkboxes.vue";
-import SpreadsheetBody from "@/Pages/Firm/SpreadsheetBody.vue";
 
 export default {
-    name: "Spreadsheet",
+    name: "Hearing-Date-Print",
     components: {
-        Spreadsheet_header,
-        Spreadsheet_checkboxes,
-        SpreadsheetBody,
         OutstandingInvoices,
         OutstandingFirm,
         hearingListFirm,
@@ -80,7 +66,6 @@ export default {
     },
     props: {
         outInvoices: Object,
-        oneRow: Array,
         outFirm: Object,
         outHearing: Object,
         customers: Object,
@@ -93,7 +78,7 @@ export default {
         customer: Object,
         invoices: Object,
     },
-    remember: { data: ["tab"], key: "Spreadsheet" },
+    remember: { data: ["tab"], key: "Hearing-Date-Print" },
     data() {
         return {
             tab: 1,

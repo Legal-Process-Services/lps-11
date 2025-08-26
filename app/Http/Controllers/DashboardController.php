@@ -30,7 +30,9 @@ class DashboardController extends Controller
 
         $outInvoices = $customer->outstandingInvoices()->orderByDesc('WorkOrderNo', 'asc')->limit(5)->get();
 
-        $oneRow= $customer->outstandingInvoices()->orderByDesc('WorkOrderNo', 'asc')->limit(1)->get();
+        $oneRow = $customer->outstandingFirm()->get();
+//        dd($oneRow);
+
 
         $data = [
             'outInvoices' => $outInvoices,

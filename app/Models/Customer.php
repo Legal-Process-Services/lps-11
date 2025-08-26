@@ -21,6 +21,21 @@ class Customer extends FMModel
         'Loc Active Primary::Email' => 'Email',
         'Status' => 'Status',
         'userID' => 'userID',
+        'WebChkDateRecdfromAttnys' => 'WebChkDateRecdfromAttnys',
+        'WebChkDateSentToAttny' => 'WebChkDateSentToAttny',
+        'WebChkWorkOrderNo' => 'WebChkWorkOrderNo',
+        'WebChkCase_No' => 'WebChkCase_No',
+        'WebChkDocket_ID' => 'WebChkDocket_ID',
+        'WebChkDateServed' => 'WebChkDateServed',
+        'WebChkServe_To' => 'WebChkServe_To',
+        'WebChkContact' => 'WebChkContact',
+        'WebChkCombAttnyFirstLastTitle' => 'WebChkCombAttnyFirstLastTitle',
+        'WebChkDept_No' => 'WebChkDept_No',
+        'WebChkCourt' => 'WebChkCourt',
+        'WebChkDateofHearing' => 'WebChkDateofHearing',
+        'WebChkPlaintiff' => 'WebChkPlaintiff',
+        'WebChkDefendant' => 'WebChkDefendant',
+        'InvoiceDate' => 'InvoiceDate',
     ];
 
 

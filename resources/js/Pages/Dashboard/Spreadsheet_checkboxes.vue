@@ -1,67 +1,187 @@
 <template>
     <div class="flex flex-col">
-        <div class="-my-2 sm:-mx-6 lg:-mx-8">
+       <div class="-my-2 sm:-mx-6 lg:-mx-8">
             <div class="py-2 align-middle inline-block w-full sm:px-6 lg:px-8">
+               <div class="flex flex-col items-left">
+                   <form name="spreadsheetform">
+                       <table
+                           class="w-1/2 divide-y divide-gray-200 table-auto"
+                       >
+                           <thead class="bg-gray-50">
 
-                <div class='flex flex-col items-left print:hidden'>
-                    <a href="javascript:window.print()"
-                       class="btn bg-blue-500 border border-blue-700 border-solid rounded text-white text-center"
-                       style="width:170px; margin-top:10px; height:50px; margin-bottom:10px;  padding-top:12px;">
-                        Pay Select Invoice(s)</a>
-                    <a href="javascript:window.location='https://www.lpsnv.com/members/spreadsheet_excel.asp?sort_by=WorkOrderNo&show_fields=DateSentToAttny, WorkOrderNo, Docket_ID, DateRecdfromAttnys, TotalAmountDueTABLE, Contact, CombAttnyFirstLastTitle, Dept_No, Defendant_Respondent'"
-                       class="btn bg-blue-500 border border-blue-700 border-solid rounded text-white text-center"
-                       style="width:170px; margin-top:10px; height:50px; margin-bottom:10px;  padding-top:12px;">
-                        Export to Excel</a>
+                        <tr >
+                        <td
+                           class=px-3 md:px-6  whitespace-nowrap text-sm text-gray-900 align-text-top
+                       >
 
-                    <a href="javascript:history.back()"
-                       class="btn bg-blue-500 border border-blue-700 border-solid rounded text-white text-center"
-                       style="width:170px; margin-top:10px; height:50px; padding-top:12px;">
-                        Return to List</a>
+                            <div>
+                                <input type="checkbox" value="" checked>
+                                Date of Hearing
+                            </div>
+                        </td>
+                               <td
+                                   class=px-3 md:px-6 py-4 whitespace-nowrap text-sm text-gray-900 align-text-top
+                               >
+                                   <div>
+                                       <input type="checkbox" value="" >
+                                       Court
+                                   </div>
+                               </td>
+                            <td
+                                class=px-3 md:px-6 py-4 whitespace-nowrap text-sm text-gray-900 align-text-top
+                            >
+                                <div>
+                                    <input type="checkbox" value="" >
+                                   Dept No
+                                </div>
+                            </td>
+                            <td
+                                class=px-3 md:px-6 py-4 whitespace-nowrap text-sm text-gray-900 align-text-top
+                            >
+                                <div>
+                                    <input type="checkbox" value="" >
+                                    Firm Name
+                                </div>
+                            </td>
+                   </tr><tr >
+                            <td
+                                class=px-3 md:px-6  whitespace-nowrap text-sm text-gray-900 align-text-top
+                            >
 
-                    <a href="javascript:window.print()"
-                       class="btn bg-blue-500 border border-blue-700 border-solid rounded text-white text-center"
-                       style="width:170px; margin-top:10px; height:50px; margin-bottom:20px;  padding-top:12px;">
-                        Print this page</a>
+                                <div>
+                                    <input type="checkbox" value="" >
+                                   Contact
+                                </div>
+                            </td>
+                            <td
+                                class=px-3 md:px-6 py-4 whitespace-nowrap text-sm text-gray-900 align-text-top
+                            >
+                                <div>
+                                    <input type="checkbox" value="" >
+                                    Total Due
+                                </div>
+                            </td>
+                            <td
+                                class=px-3 md:px-6 py-4 whitespace-nowrap text-sm text-gray-900 align-text-top
+                            >
+                                <div>
+                                    <input type="checkbox" value="" checked>
+                                    Serve To
+                                </div>
+                            </td>
+                            <td
+                                class=px-3 md:px-6 py-4 whitespace-nowrap text-sm text-gray-900 align-text-top
+                            >
+                                <div>
+                                    <input type="checkbox" value="" checked>
+                                    Date Served
+                                </div>
+                            </td>
+                        </tr><tr >
+                            <td
+                                class=px-3 md:px-6  whitespace-nowrap text-sm text-gray-900 align-text-top
+                            >
+
+                                <div>
+                                    <input type="checkbox" value="" checked>
+                                    Date Received
+                                </div>
+                            </td>
+                            <td
+                                class=px-3 md:px-6 py-4 whitespace-nowrap text-sm text-gray-900 align-text-top
+                            >
+                                <div>
+                                    <input type="checkbox" value="" >
+                                    Docket ID
+                                </div>
+                            </td>
+                            <td
+                                class=px-3 md:px-6 py-4 whitespace-nowrap text-sm text-gray-900 align-text-top
+                            >
+                                <div>
+                                    <input type="checkbox" value="" >
+                                    Case No
+                                </div>
+                            </td>
+                            <td
+                                class=px-3 md:px-6 py-4 whitespace-nowrap text-sm text-gray-900 align-text-top
+                            >
+                                <div>
+                                    <input type="checkbox" value="" >
+                                    Workorder No
+                                </div>
+                            </td>
+                        </tr><tr >
+                            <td
+                                class=px-3 md:px-6  whitespace-nowrap text-sm text-gray-900 align-text-top
+                            >
+
+                                <div>
+                                    <input type="checkbox" value="" >
+                                    Date Sent to Attorney
+                                </div>
+                            </td>
+                            <td
+                                class=px-3 md:px-6 py-4 whitespace-nowrap text-sm text-gray-900 align-text-top
+                            >
+                                <div>
+                                    <input type="checkbox" value="" checked>
+                                    Plaintiff
+                                </div>
+                            </td>
+                            <td
+                                class=px-3 md:px-6 py-4 whitespace-nowrap text-sm text-gray-900 align-text-top
+                            >
+                                <div>
+                                    <input type="checkbox" value="" >
+                                    Defendant
+                                </div>
+                            </td>
+                            <td
+                                class=px-3 md:px-6 py-4 whitespace-nowrap text-sm text-gray-900 align-text-top
+                            >
+                                <div>
+
+                                </div>
+                            </td>
+                        </tr>
+                           </THEAD>
+                       </table>
+                   </form>
                 </div>
-                <div class="text-sm mb-5 pl-5 font-light text-gray-600" style="width: 100%; vertical-align: top;">
-                    <div style="display: inline-block; width: 30%;  vertical-align: top;">
-                    </div>
-
-                    <div style="display: inline-block; width: 30%; vertical-align: top; text-align: center; line-height: 16px;">
-                       <span class="font-bold text-gray-900 text-lg">Legal Process Service</span><br>
-                        Professional Service Since 1982<br>
-                        724 So. Eight Street * Las Vegas * Nevada 89101<br>
-                        (702) 471-7255 * FAX (702) 471-7248<br>
-                        Tax ID - 88-0293775<br>
-                        www.lpsnv.com
-                    </div>
-                    <div style="display: inline-block; width: 30%;  vertical-align: top;">
-                       &nbsp;
-                    </div>
-
-
                 </DIV>
             </div>
         </div>
-    </div>
 </template>
 
 <script>
 import { assertTSUnknownKeyword } from "@babel/types";
+import FormSection from "@/Components/FormSection.vue";
+import attemptDetail from "@/Pages/Attempt/AttemptDetail.vue";
+import RightNav2 from "@/Pages/Dashboard/RightNav2.vue";
+import RightNav from "@/Pages/Dashboard/RightNav.vue";
+import {Link} from "@inertiajs/vue3";
 
 export default {
-    name: "Spreadsheet_header",
+    name: "Spreadsheet_checkboxes",
+    components: { FormSection, RightNav2, RightNav,Link},
     props: {
-        customers: Object,
-        sixmoago: String,
-        sevendaysago: String,
+
     },
-    methods: {
-        assertTSUnknownKeyword,
-        clickRow: function (customer_id) {
-            let url = route("customer.detail", customer_id);
-            this.$inertia.get(url);
-        },
+    remember: {
+        data: ["currentPage", "customers", "customer", "here", "loading", "links"],
+        key: "SpreadsheetCheckboxes",
+    },
+    data() {
+        return {
+            loading: true,
+            customers: Object,
+            customer: Object,
+            heres: Object,
+            invoices: Array,
+            oneRow: Array,
+            links: Array,
+        };
     },
 };
 </script>

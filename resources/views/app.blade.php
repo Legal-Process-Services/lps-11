@@ -32,7 +32,7 @@
                 getElement("acctBalTot").innerHTML = "$"+Amount.toFixed(2);
                 getElement("acctChargeTot").innerHTML = "$"+Amount.toFixed(2);
                 if ( getElement("os0") ) getElement("os0").value = "$"+Amount.toFixed(2);
-                sTotal = Amount;
+               sTotal = Amount;
             }
             //========================================
             function uncheckAll(field,ele){
@@ -40,7 +40,7 @@
                 for (i=0;i<=field.length;i++) {
                     if (field[i]) field[i].checked = false ;
                 }
-                document.forms["myform"].elements[ele].value = "";
+                 document.forms["myform"].elements[ele].value = "";
                 sTotal = 0;
                 getElement("acctBalTot").innerHTML = "$0.00";
                 getElement("acctChargeTot").innerHTML = "$0.00";

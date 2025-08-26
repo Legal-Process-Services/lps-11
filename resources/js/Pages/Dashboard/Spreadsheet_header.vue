@@ -51,11 +51,7 @@ import { assertTSUnknownKeyword } from "@babel/types";
 
 export default {
     name: "Spreadsheet_header",
-    props: {
-        customers: Object,
-        sixmoago: String,
-        sevendaysago: String,
-    },
+    props: {   },
     methods: {
         assertTSUnknownKeyword,
         clickRow: function (customer_id) {

@@ -3,40 +3,51 @@
         <div class="-my-2 sm:-mx-6 lg:-mx-8">
             <div class="py-2 align-middle inline-block w-full sm:px-6 lg:px-8">
                 <div
-                    class="text-lg mb-5 pl-5 font-light text-gray-600 mt-4 hidden sm:block"
+                    class="text-lg mb-5 pl-5 font-light text-gray-600 sm:hidden pt-5"
+                >
+                    Your Account
+                </div>
+                <div
+                    class="text-lg mb-5 pl-5 font-light text-gray-600 hidden sm:block pt-5"
                 >
                     Your Account
                 </div>
                 <!-- Table Mobile -->
-                <div class="grid gap-y-4 sm:hidden">
-                    <div
-                        v-for="customer in customers"
-                        class="shadow bg-white p-5 grid grid-cols-2"
-                        v-on:click="clickRow(customer.customer_id)"
-                    >
+
+                <div class="grid gap-y-4 sm:hidden ml-2">
+                    <div class="shadow bg-white p-5">
                         <div>
-                            <div class="">#{{ customer.customer_id }}</div>
-                            <div class="text-xs text-gray-500">
-                                Date: {{ customer.FirmName }}
+                            <div class="text-xs">
+                                <a href="account-balance"
+                                >Account Balance</a
+                                >
                             </div>
-                        </div>
-                        <div class="">
-                            <div class="text-right">
-                                <div class="text-lg">
-                                    {{ customer.Status }}
-                                </div>
+                            <hr class="mb-1 mt-0.5" />
+                            <div class="text-xs">
+                                <a href="search">Search</a>
                             </div>
-                        </div>
-                        <div>
-                            <div class="text-sm text-gray-900 mt-4">
-                                {{ customer.FirmName }} TEST1
+                            <hr class="mb-1 mt-0.5" />
+                            <div class="text-xs">
+                                <a href="reports">Report</a>
                             </div>
-                        </div>
-                        <div>
-                            <div class="text-right text-sm font-medium mt-5">
-                                Pay Now
+                            <hr class="mb-1 mt-0.5" />
+                            <div class="text-xs">
+                                <a href="hearing-date"
+                                >Hearing Date Report</a
+                                >
                             </div>
+                            <hr class="mb-1 mt-0.5" />
+                            <div class="text-xs">
+                                <a
+                                    href="mailto:%63on%74ac%74@lp%73nv%2E%63om"
+                                    target="_blank"
+                                >Email Us</a
+                                >
+                            </div>
+
                         </div>
+
+                        <div></div>
                     </div>
                 </div>
 

@@ -5,7 +5,7 @@
                 <div
                     class="text-lg mb-5 pl-5 font-light text-gray-600 sm:hidden"
                 >
-                    Forms
+                    Submit Request
                 </div>
                 <div
                     class="text-lg mb-5 pl-5 font-light text-gray-600 hidden sm:block"

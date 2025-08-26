@@ -2,146 +2,103 @@
   <div class="flex flex-col">
     <div class="-my-2 sm:-mx-6 lg:-mx-8">
       <div class="py-2 align-middle inline-block w-full sm:px-6 lg:px-8">
-        <div class="text-lg mb-5 pl-5 font-light text-gray-600">
-          Your Process List
-        </div>
+<!--        <div class="text-lg mb-5 pl-5 font-light text-gray-600">-->
+<!--          Your Process List-->
+<!--        </div>-->
         <!--                 Table Mobile -->
         <div class="grid gap-y-4 sm:hidden">
-            <table
-                class="w-half divide-y divide-gray-200 table-auto"
-            >
-                <thead class="bg-gray-50">
-                <tr>
-                    <th
-                        scope="col"
-                        class="pl-3 md:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase;"
-                    >
-                        Work Order
-                    </th>
-                    <th
-                        scope="col"
-                        class="px-3 md:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase"
-                    >
-                        Serve To
-                    </th>
-                    <th
-                        scope="col"
-                        class="px-3 md:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase"
-                    >
-                        Date
-                    </th>
-                    <th
-                        scope="col"
-                        class="px-3 md:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
-                    >
-                        Time
-                    </th>
-                    <th
-                        scope="col"
-                        class="px-3 md:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
-                    >
-                        Court
-                    </th>
-                    <th
-                        scope="col"
-                        class="px-3 md:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
-                    >
-                        County
-                    </th>
-                    <th
-                        scope="col"
-                        class="px-3 md:px-6 py-3 text-xs font-medium text-gray-500 uppercase tracking-wider"
-                    >
-                        &nbsp;
-                    </th>
-                </tr>
-                </thead>
-                <tbody
-                    class="bg-white divide-y divide-gray-200"
-                >
-                <tr v-if="loading">
-                    <td
-                        colspan="5"
-                        class="text-center py-24 bg-gray-100"
-                    >
-                        <div class="lds-ring">
-                            <div></div>
-                            <div></div>
-                            <div></div>
-                            <div></div>
-                        </div>
-                    </td>
-                </tr>
-                <tr
-                    v-if="invoices.length === 0 && !loading"
-                    class="shadow bg-white h-16 text-gray-500"
-                >
-                    <td colspan="5" class="text-center">
-                        You have no Work Orders in the past
-                        6 months.
-                    </td>
-                </tr>
+          <div
+              v-if="invoices.length === 0"
+              class="shadow bg-white h-16 flex items-center justify-center text-gray-500"
+          >
+            You have no Work Orders in the past 6 months.
+          </div>
 
-                <tr
-                    v-if="!loading"
-                    v-for="invoice in invoices"
-                    v-on:click="clickRow(invoice.id)"
+          <div
+              v-for="invoice in invoices"
+              class="shadow bg-white p-5 grid grid-cols-1"
+          >
+            <div>
+              <div class="">
+                                <span class="text-xs"> WORK ORDER #: </span
+                                >{{ invoice.id }}
+              </div>
+              <div class="text-s text-gray-900">
+                                <span class="text-xs"> STATUS: </span
+                                >{{ invoice.total }}
+              </div>
+              <div class="text-s text-gray-900">
+                                <span class="text-xs"> SERVED ON: </span
+                                >{{ invoice.DateServed }}
+              </div>
+            </div>
+            <div class=""></div>
+            <div>
+              <div class="text-s text-gray-900 mt-2">
+                                <span class="text-xs"> UPDATE(S): </span
+                                >{{ invoice.InvoiceFaxRemarks }}
+              </div>
+            </div>
+            <div class=""></div>
+            <div>
+              <div class="text-sm text-gray-900 mt-2">
+                                <span class="text-xs"> FILE NAME: </span
+                                >{{ invoice.Docket_ID }}
+              </div>
+              <div class="text-sm text-gray-900 mt-2">
+                                <span class="text-xs"> CASE NO: </span
+                                >{{ invoice.Case_No }}
+              </div>
+              <div class="text-sm text-gray-900 mt-2">
+                                <span class="text-xs"> ENTERED: </span
+                                >{{ invoice.N1010C_Date }}
+              </div>
+              <div class="text-sm text-gray-900 mt-2">
+                                <span class="text-xs"> RECEIVED: </span
+                                >{{ invoice.DateRecdfromAttnys }}
+              </div>
+              <div class="text-sm text-gray-900 mt-2">
+                                <span class="text-xs"> SERVE TO: </span
+                                >{{ invoice.Serve_To }}
+              </div>
+              <div class="text-sm text-gray-900 mt-2">
+                                <span class="text-xs"> CLIENT/INSURED: </span
+                                >{{ invoice.Insured }}
+              </div>
+              <div class="text-sm text-gray-900 mt-2 underline">
+                <Link
+                    :href="route('invoice.detail', invoice.id)"
+                    @click.stop=""
+                    class="px-2 py-1"
                 >
-                    <td
-                        class="pl-3 md:px-6 py-4 flex-wrap"
-                    >
-                        <div class="flex items-center">
-                            <div
-                                class="text-md font-light"
-                            >
-                                <b>{{ invoice.id }}</b>
-                            </div>
-                        </div>
-                    </td>
-                    <td
-                        class="px-1 md:px-1 py-1 whitespace-normal text-sm text-gray-900 align-text-top"
-                    >
-                        <div class="">
-                            {{
-                                invoice.Serve_To
-                            }}
-                        </div>
-                    </td>
-                    <td
-                        class="px-1 md:px-1 py-1 whitespace-normal text-sm text-gray-900 align-text-top"
-                    >
-                        <div class="">
-                            {{ invoice.DateofHearing }}
-                            <br/>
-                            Hearing Status: {{ invoice.HearingStatus }}
-                        </div>
-                    </td>
-                    <td
-                        class="px-1 md:px-1 py-1 whitespace-normal text-sm text-gray-900 align-text-top"
-                    >
-                        <div class="">
-                            {{ invoice.TimeofHearing }}
-                        </div>
-                    </td>
-                    <td
-                        class="px-1 md:px-1 py-1 whitespace-normal text-sm text-gray-900 align-text-top"
-                    >
-                        {{
-                            invoice.Court
-                        }}
-                    </td>
-                    <td
-                        class="px-1 md:px-1 py-1 whitespace-normal text-sm text-gray-900 align-text-top"
-                        colspan="2"
-                    >
-                        <div  style="overflow-y:hidden; overflow-x: hidden; width:70px; ">
-                            {{ invoice.County }}
-                        </div>
-                    </td>
-
-                </tr>
-                </tbody>
-            </table>
+                  Worksheet
+                </Link>
+              </div>
+              <div class="text-sm text-gray-900 mt-2 underline">
+                <Link
+                    :href="route('attempt.detail', invoice.id)"
+                    @click.stop=""
+                    class="px-2 py-1"
+                >
+                  Attempt History
+                </Link>
+              </div>
+              <div class="text-sm text-gray-900 mt-2 underline">
+                <Link
+                    :href="route('client-response', invoice.id)"
+                    class="px-2 py-1"
+                >Email LPS about this service</Link
+                >
+              </div>
+            </div>
+          </div>
+          <div class="container"></div>
+          <!--                    <pagination-->
+          <!--                        class="mt-6"-->
+          <!--                        :links="links"-->
+          <!--                        :current-page="currentPage"-->
+          <!--                        v-on:clicked="clickPagination"-->
+          <!--                    />-->
         </div>
 
         <!-- Table Desktop Table -->
@@ -161,7 +118,8 @@
                 <tr>
                   <th
                       scope="col"
-                      class="pl-3 md:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider width: 200px;"
+                      class="pl-3 md:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+                      style="width: 200px;"
                   >
                     Work Order
                   </th>
@@ -185,7 +143,7 @@
                   </th>
                   <th
                       scope="col"
-                      class="px-3 md:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+                      class="px-3 md:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider print:font-sm"
                   >
                     Court
                   </th>
@@ -195,12 +153,7 @@
                   >
                    County
                   </th>
-                  <th
-                      scope="col"
-                      class="px-3 md:px-6 py-3 text-xs font-medium text-gray-500 uppercase tracking-wider"
-                  >
-                    &nbsp;
-                  </th>
+
                 </tr>
                 </thead>
                 <tbody
@@ -235,7 +188,7 @@
                     v-on:click="clickRow(invoice.id)"
                 >
                   <td
-                      class="pl-3 md:px-6 py-4 flex-wrap"
+                      class="pl-3 md:px-6 py-4 flex-wrap print:text-xs"
                   >
                     <div class="flex items-center">
                       <div
@@ -246,16 +199,16 @@
                     </div>
                   </td>
                   <td
-                      class="px-3 md:px-6 py-4 whitespace-nowrap text-sm text-gray-900 align-text-top"
+                      class="px-3 md:px-6 py-4 whitespace-nowrap text-sm text-gray-900 align-text-top print:text-xs"
                   >
-                    <div class="">
+                    <div class="print:text-xs">
                       {{
                         invoice.Serve_To
                       }}
                     </div>
                   </td>
                   <td
-                      class="px-3 md:px-6 py-4 whitespace-nowrap text-sm text-gray-900 align-text-top"
+                      class="px-3 md:px-6 py-4 whitespace-nowrap text-sm text-gray-900 align-text-top print:text-xs"
                   >
                     <div class="">
                       {{ invoice.DateofHearing }}
@@ -271,15 +224,15 @@
                     </div>
                   </td>
                   <td
-                      class="px-3 md:px-6 py-4 whitespace-nowrap text-sm text-gray-900 align-text-top"
+                      class="px-3 md:px-6 py-4 whitespace-nowrap text-sm text-gray-900 align-text-top print:text-xs"
                   >
                     {{
                       invoice.Court
                     }}
                   </td>
                   <td
-                      class="px-3 md:px-6 py-4 whitespace-nowrap text-sm text-gray-900 align-text-top"
-                      colspan="2"
+                      class="px-3 md:px-6 py-4 whitespace-nowrap text-sm text-gray-900 align-text-top print:text-xs"
+
                   >
                     <div  style="overflow-y:hidden; overflow-x: hidden; width:70px; ">
                     {{ invoice.County }}
@@ -302,12 +255,7 @@
       </div>
     </div>
 
-    <div class='flex flex-col items-left'>
-    <a href="hearing-date-print"
-       class="btn bg-blue-500 border border-blue-700 border-solid rounded text-white text-center"
-       style="width:170px; margin-top:50px; height:50px; margin-top:20px; padding-top:12px;">
-     Printer Friendly</a>
-  </div>
+
   </div>
 </template>
 <style scoped>
@@ -362,7 +310,7 @@ import RightNav2 from "@/Pages/Dashboard/RightNav2.vue";
 import {Link} from '@inertiajs/vue3';
 
 export default {
-  name: "HearingDate",
+  name: "HearingDatePrint",
   computed: {
     attemptDetail() {
       return attemptDetail;
@@ -372,11 +320,16 @@ export default {
   props: {},
   remember: {
     data: ["currentPage", "invoices", "loading", "links"],
-    key: "HearingDate",
+    key: "HearingDatePrint",
   },
   methods: {
-    clickPagination(page) {
-      this.getPrintable(page);
+    attempt,
+    clickRow(id) {
+      let url = route("invoice.detail", id);
+      this.$inertia.get(url);
+      Ï;
+    }, clickPagination(page) {
+      this.getSearches(page);
     },
     getPrintable(page) {
       this.loading = true;

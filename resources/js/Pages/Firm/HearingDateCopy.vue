@@ -2,9 +2,8 @@
     <div class="flex flex-col">
         <div class="-my-2 sm:-mx-6 lg:-mx-8">
             <div class="py-2 align-middle inline-block w-full sm:px-6 lg:px-8">
-                <div class="text-lg mb-1 pl-5 font-light text-gray-600">
-                    Select Invoices
-                    <img src="img/down-arrow.png" alt="Select Checkboxes Below" style="width: 15px;" class="ml-10">
+                <div class="text-lg mb-5 pl-5 font-light text-gray-600">
+                    Hearing Date List JCZ
                 </div>
                 <!--                 Table Mobile -->
                 <div class="grid gap-y-4 sm:hidden">
@@ -111,7 +110,7 @@
                     >
                         <div
                             class="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg"
-                        > <form name="myform" action="pymt_stub.asp" method="post" onSubmit="return OnSubmitForm();">
+                        >
                             <table
                                 class="w-full divide-y divide-gray-200 table-auto"
                             >
@@ -121,51 +120,49 @@
                                             scope="col"
                                             class="pl-3 md:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider width: 200px;"
                                         >
-                                                <button
-                                                class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" type="button"
-                                                onclick="checkAll(document.myform.baldue,'workorders',113.221542)"
-                                            >
-                                                Check All JCZ
-                                            </button><br>
-                                                &nbsp;<button
-                                                class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-1" type="button"
-                                                onclick="uncheckAll(document.myform.baldue,'workorders')"
-
-
-                                            >
-                                                Uncheck
-                                            </button>
-                                        </th>
-                                        <th
-                                            scope="col"
-                                            class="pl-3 md:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
-                                        ><br><br><br>
-                                            Invoice #
+                                            Work Order
                                         </th>
                                         <th
                                             scope="col"
                                             class="px-3 md:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
-                                        ><br><br><br>
-                                            Contact
+                                        >
+                                            &nbsp;
                                         </th>
                                         <th
                                             scope="col"
                                             class="px-3 md:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
-                                        ><br><br><br>
-                                           Inv. Date
+                                        >
+                                            Serve To
                                         </th>
-
                                         <th
                                             scope="col"
                                             class="px-3 md:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
-                                        ><br><br><br>
-                                            Case #
+                                        >
+                                            &nbsp;
+                                        </th>
+                                        <th
+                                            scope="col"
+                                            class="px-3 md:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+                                        >
+                                            Date
                                         </th>
                                         <th
                                             scope="col"
                                             class="px-3 md:px-6 py-3 text-xs font-medium text-gray-500 uppercase tracking-wider"
-                                        ><br><br><br>
-                                            Inv. Amount
+                                        >
+                                            Time
+                                        </th>
+                                        <th
+                                            scope="col"
+                                            class="px-3 md:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+                                        >
+                                            Court
+                                        </th>
+                                        <th
+                                            scope="col"
+                                            class="px-3 md:px-6 py-3 text-xs font-medium text-gray-500 uppercase tracking-wider"
+                                        >
+                                            County JZ
                                         </th>
                                     </tr>
                                 </thead>
@@ -188,77 +185,107 @@
                                     <tr
                                         v-if="invoices.length === 0 && !loading"
                                         class="shadow bg-white h-16 text-gray-500"
-                                        iRecordCount = 1
-                                    ' Count how many records exist
                                     >
                                         <td colspan="5" class="text-center">
-                                            You have no Work Orders in the past
-                                            6 months.
+                                            You have no Hearing Dates during this time range.
                                         </td>
                                     </tr>
 
                                     <tr
                                         v-if="!loading"
                                         v-for="invoice in invoices"
+                                        v-on:click="clickRow(invoice.id)"
                                     >
-                                        <td
-                                            class="px-3 md:px-6 py-4 whitespace-nowrap text-sm text-gray-900 align-text-top"
-                                        >
-                                           jeanie2 <input name="baldue" type="checkbox" value="{{ invoice.id }}" onClick="AddThis(this,'workorders',<{{
-                                                   TotalAmountDueTABLE>)}}">
-
-                                        </td>
                                         <td
                                             class="pl-3 md:px-6 py-4 flex-wrap"
+                                            colspan="5"
                                         >
-                                            <b>{{ invoice.id }}</b>
-
+                                            <div class="flex items-center">
+                                                <div
+                                                    class="text-md font-medium"
+                                                >
+                                                    <b>TEST {{ invoice.id }}</b>
+                                                    <br /><br />
+                                                    File Name
+                                                    <b>{{
+                                                        invoice.Docket_ID
+                                                    }}</b>
+                                                    <br />Case No
+                                                    <b>{{ invoice.Case_No }}</b>
+                                                    <br />Entered
+                                                    <b>{{
+                                                        invoice.N1010C_Date
+                                                    }}</b>
+                                                    <br />Received
+                                                    <b>
+                                                        {{
+                                                            invoice.DateRecdfromAttnys
+                                                        }}</b
+                                                    ><br />Serve To
+                                                    <b>
+                                                        {{
+                                                            invoice.Serve_To
+                                                        }}</b
+                                                    >
+                                                    <br />Client/Insured
+                                                    <b>{{ invoice.Insured }}</b>
+                                                    <br /><Link
+                                                        :href="
+                                                            route(
+                                                                'invoice.detail',
+                                                                invoice.id,
+                                                            )
+                                                        "
+                                                        @click.stop=""
+                                                        class="px-2 py-1"
+                                                    >
+                                                        Worksheet </Link
+                                                    >|
+                                                    <Link  :href="
+                                                            route(
+                                                                'attempt.detail',
+                                                                invoice.id,
+                                                            )
+                                                        "
+                                                           @click.stop=""
+                                                           class="px-2 py-1">Attempt History</Link>
+                                                    <br /><Link
+                                                        :href="
+                                                            route(
+                                                                'client-response',
+                                                                invoice.id,
+                                                            )
+                                                        "
+                                                        @click.stop=""
+                                                        class="px-2 py-1"
+                                                        >Email LPS about this
+                                                        service</Link
+                                                    >
+                                                </div>
+                                            </div>
                                         </td>
                                         <td
                                             class="px-3 md:px-6 py-4 whitespace-nowrap text-sm text-gray-900 align-text-top"
                                         >
                                             <div class="">
-                                                {{ invoice.ContactID }}
-                                            </div>
-                                        </td><td
-                                        class="px-3 md:px-6 py-4 whitespace-nowrap text-sm text-gray-900 align-text-top"
-                                    >
-                                        <div class="">
-                                            {{ invoice.InvoiceDate }}
-                                        </div>
-                                    </td>
-                                        <td
-                                            class="px-3 md:px-6 py-4 whitespace-nowrap text-sm text-gray-900 align-text-top"
-                                        >
-                                            <div class="">
-                                                {{ invoice.Case_No }} &nbsp;&nbsp;{{ invoice.Docket_ID }}
+                                                {{ invoice.total }}
                                             </div>
                                         </td>
                                         <td
-                                            class="px-3 md:px-6 py-4 whitespace-normal text-sm text-gray-900 align-text-top"
+                                            class="px-3 md:px-6 py-4 whitespace-nowrap text-sm text-gray-900 align-text-top"
+                                        >
+                                            {{ invoice.DateServed }}
+                                        </td>
+                                        <td
+                                            class="px-3 md:px-6 py-4 whitespace-normal align-text-top"
                                         >
                                             <div>
-                                                {{ invoice.TotalAmountDueTABLE }}
+                                                {{ invoice.InvoiceFaxRemarks }}
                                             </div>
                                         </td>
                                     </tr>
-                                <tr>
-                                    <TD COLSPAN="5" STYLE="width:100%; font-size:14px; font-weight:bold;">Total Invoices Selected:</TD>
-                                    <TD COLSPAN="3" ALIGN="right"><SPAN ID="acctBalTot" STYLE="font-size:14px; font-weight:bold;"></SPAN>
-                                    </TD>
-                                    <INPUT TYPE="hidden" name="workorders" id="workorders" value=""/>
-                                    <INPUT TYPE="hidden" NAME="cat" ID="cat" VALUE="1"/>
-                                </tr>
-                                <tr>
-                                    <TD COLSPAN="5" STYLE="width:100%; font-size:14px; font-weight:bold;">Pay Selected Invoices Balance of  </TD>
-                                    <TD COLSPAN="3" ALIGN="right"><SPAN ID="acctChargeTot" STYLE="font-size:14px; font-weight:bold;"></SPAN>
-                                        <NOBR><INPUT ID="act" TYPE="hidden" NAME="act" VALUE="Pay Select Invoice(s)  " />
-                                        <INPUT ID="money" TYPE="hidden" NAME="money" VALUE="" />
-                                    </NOBR>
-                                    </TD>
-                                    </tr>
                                 </tbody>
-                            </table></form>
+                            </table>
                         </div>
                         <div class="container"></div>
 <!--                        <pagination-->
@@ -320,7 +347,7 @@ import RightNav2 from "@/Pages/Dashboard/RightNav2.vue";
 import { Link } from '@inertiajs/vue3';
 
 export default {
-    name: "PaySelect",
+    name: "HearingDate",
     computed: {
         attemptDetail() {
             return attemptDetail;
@@ -330,7 +357,7 @@ export default {
     props: {},
     remember: {
         data: ["currentPage", "invoices", "loading", "links"],
-        key: "PaySelect",
+        key: "HearingDate",
     },
     methods: {
         attempt,
@@ -351,7 +378,7 @@ export default {
             }
             this.currentPage = parseInt(page);
             axios
-                .get(route("dashboard-paid-invoices"), {
+                .get(route("hearing-date"), {
                     params: { page: page },
                 })
                 .then((response) => {

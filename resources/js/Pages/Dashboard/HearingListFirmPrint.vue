@@ -2,6 +2,21 @@
     <div class="flex flex-col">
         <div class="-my-2 sm:-mx-6 lg:-mx-8">
             <div class="py-2 align-middle inline-block w-full sm:px-6 lg:px-8">
+
+                <div class='flex flex-col items-left print:hidden'>
+                    <a href="javascript:history.back()"
+                       class="btn bg-blue-500 border border-blue-700 border-solid rounded text-white text-center"
+                       style="width:170px; margin-top:50px; height:50px; padding-top:12px;">
+                        Back</a>
+
+                    <a href="javascript:window.print()"
+                       class="btn bg-blue-500 border border-blue-700 border-solid rounded text-white text-center"
+                       style="width:170px; margin-top:10px; height:50px; margin-bottom:20px;  padding-top:12px;">
+                        Print</a>
+                </div>
+
+
+
                 <div class="text-lg mb-5 pl-5 font-light text-gray-600">
                     Firm Details
                 </div>
@@ -22,9 +37,9 @@
                             </div>
                             <div class="text-s text-gray-900">
                                 <span class="text-xs">
-                                    SHOWING PROCESSES SINCE:</span
-                                ><br>
-                                {{ sixmoago }}
+                                    SHOWING HEARING DATES AFTER:</span
+                                >
+                                {{ sevendaysago }}
                             </div>
                         </div>
                     </div>
@@ -47,7 +62,7 @@
                                             scope="col"
                                             class="pl-4 md:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
                                         >
-                                            Client ID ABC
+                                            Client ID
                                         </th>
                                         <th
                                             scope="col"
@@ -59,7 +74,7 @@
                                             scope="col"
                                             class="px-3 md:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
                                         >
-                                            Showing Processes Since
+                                            SHOWING HEARING DATES AFTER:
                                         </th>
                                     </tr>
                                 </thead>
@@ -90,7 +105,7 @@
                                             class="px-3 md:px-6 py-4 whitespace-nowrap text-med text-gray-900"
                                         >
                                             <div class="text-md font-medium">
-                                                {{ sixmoago }}
+                                                {{ sevendaysago }}
                                             </div>
                                         </td>
                                     </tr>
@@ -109,10 +124,11 @@
 import { assertTSUnknownKeyword } from "@babel/types";
 
 export default {
-    name: "OutstandingFirm",
+    name: "HearingListFirmPrint",
     props: {
         customers: Object,
         sixmoago: String,
+        sevendaysago: String,
     },
     methods: {
         assertTSUnknownKeyword,

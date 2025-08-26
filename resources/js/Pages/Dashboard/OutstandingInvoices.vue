@@ -181,7 +181,6 @@ export default {
     components: {Link},
     props: {
         invoices: Object,
-        oneRow: Object,
     },
     methods: {
         clickRow: function (id) {
