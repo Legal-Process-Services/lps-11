@@ -54,7 +54,7 @@ import AccountBalance from "@/Pages/Firm/AccountBalance.vue";
 import {useRemember} from "@inertiajs/vue3";
 import OutstandingFirm from "@/Pages/Dashboard/OutstandingFirm.vue";
 import AcctBal from "@/Pages/Firm/Acct-Bal.vue";
-import Statement from "@/Pages/Firm/statement.vue";
+import Statement from "@/Pages/Firm/Statement.vue";
 import accountBalance from "@/Pages/Firm/AccountBalance.vue";
 
 export default {
